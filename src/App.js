@@ -11,8 +11,7 @@ class App extends Component {
   componentDidMount() {
     return fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/folders')
       .then(res => res.json())
-      .then(data => console.log(data))
-      // .then(data => this.setState({folders: data}))
+      .then(folderInfo => this.setState({folders: folderInfo}))
   }
 
   render()  {
