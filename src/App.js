@@ -8,7 +8,7 @@ class App extends Component {
       folders: []
     }
   }
-  componentDidMount() {
+  componentDidMount = () => {
     return fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/folders')
       .then(res => res.json())
       .then(folders => this.setState({folders}))
