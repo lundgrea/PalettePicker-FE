@@ -20,7 +20,6 @@ class App extends Component {
    
    <div className="App">
      <h1>Palette Picker</h1>
-     <p>{this.state.folders[1]}</p>
     </div>
     );
   }
