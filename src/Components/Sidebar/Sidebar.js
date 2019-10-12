@@ -4,7 +4,7 @@ import FoldersContainer from '../../Components/FoldersContainer/FoldersContainer
 import './Sidebar.css'
 
 const Sidebar = (props) => {
-  console.log(props)
+  console.log('sidebar folder', props)
   return (
     <aside className="Sidebar">
       <FolderForm />

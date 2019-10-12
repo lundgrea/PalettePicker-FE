@@ -12,20 +12,22 @@ class App extends Component {
       folderID: "",
       palettes: [],
       paletteID: "",
-      currentPalette: []
+      currentPalette: [],
+      isLoading: true
     }
   }
   componentDidMount = () => {
     return fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/folders')
       .then(res => res.json())
       .then(folders => this.setState({folders}))
+      .then(isLoading => this.setState({isLoading: false}))
       .catch(error => console.log(error))
   }
 
   render()  {
    return (
    <main className="App">
-     <Sidebar folders={this.state.folders}/>
+     {!this.state.isLoading && <Sidebar folders={this.state.folders}/>}
      <Header />
      <PaletteContainer />
     </main>
