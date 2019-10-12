@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Sidebar from '../Sidebar/Sidebar'
+import Sidebar from '../Sidebar/Sidebar';
+import Header from '../Header/Header'
+import PaletteContainer from '../PaletteContainer/PaletteContainer'
 import './App.css';
 
 class App extends Component {
@@ -24,6 +26,8 @@ class App extends Component {
    return (
    <main className="App">
      <Sidebar folders={this.state.folders}/>
+     <Header />
+     <PaletteContainer />
     </main>
     );
   }
