@@ -1,0 +1,8 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  border: 2px solid black;
+  /* font-family: 'Caveat', cursive; */
+}

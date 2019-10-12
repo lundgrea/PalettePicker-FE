@@ -1,0 +1,13 @@
+.Header {
+  height: 100px;
+  width: 100%;
+  border-bottom: 2px solid black;
+  font-family: 'Caveat', cursive;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header-text {
+  margin-right: 20px;
+  font-size: 50px;
+}
