@@ -10,12 +10,21 @@ class PaletteForm extends Component {
     }
   }
 
-  render() {
+  generateNewColors = (e) => {
+    e.preventDefault()
+    let redo = "redo"
+    this.props.generateRandomColors(redo)
+  }
 
+
+  render() {
   return (
     <section className="PaletteForm">
      <form>
-      <button>Generate Palette</button>
+      <button 
+      onClick={this.generateNewColors}>
+        Generate Palette
+      </button>
        <label>Add Palette Name</label>
        <input></input>
        <button>Enter Name</button>

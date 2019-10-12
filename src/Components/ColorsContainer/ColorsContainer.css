@@ -1,4 +1,6 @@
 .ColorsContainer{
   height: 300px;
   border-bottom: 2px solid black;
+  display: flex;
+  width: 100%;
 }
