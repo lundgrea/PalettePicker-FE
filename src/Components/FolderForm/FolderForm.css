@@ -1,0 +1,23 @@
+.FolderForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 150px;
+  background-color: red;
+}
+
+#addFolder-input {
+  width: 75%;
+  margin: auto;
+  border-radius: 5px;
+  height: 35px;
+  font-size: 15px;
+}
+
+#addFolder-button {
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  height: 25px;
+}

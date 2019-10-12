@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Sidebar from '../Sidebar/Sidebar'
 import './App.css';
 
 class App extends Component {
@@ -21,10 +22,9 @@ class App extends Component {
 
   render()  {
    return (
-   
-   <div className="App">
-     <h1>Palette Picker</h1>
-    </div>
+   <main className="App">
+     <Sidebar folders={this.state.folders}/>
+    </main>
     );
   }
 }
