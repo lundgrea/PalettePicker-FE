@@ -5,6 +5,7 @@
   align-items: center;
   height: 150px;
   background-color: red;
+  width: 100%;
 }
 
 #addFolder-input {
