@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Main from "../Main/Main";
+import { getFolders } from '../../apiCalls/apiCalls'
 import "./App.css";
 
 let array = [];
@@ -65,8 +66,7 @@ class App extends Component {
 
   componentDidMount = () => {
     this.generateRandomColors();
-    return fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/folders")
-      .then(res => res.json())
+    getFolders()
       .then(folders => this.setState({ folders }))
       .then(isLoading => this.setState({ isLoading: false }))
       .catch(error => error);
