@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
-import Header from '../Header/Header'
-import PaletteContainer from '../PaletteContainer/PaletteContainer'
+import Main from '../Main/Main'
 import './App.css';
 
 class App extends Component {
@@ -16,6 +15,11 @@ class App extends Component {
       isLoading: true
     }
   }
+
+  generateRandomColor = ()  => {
+    
+  }
+
   componentDidMount = () => {
     return fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/folders')
       .then(res => res.json())
@@ -28,8 +32,7 @@ class App extends Component {
    return (
    <main className="App">
      {!this.state.isLoading && <Sidebar folders={this.state.folders}/>}
-     <Header />
-     <PaletteContainer />
+    <Main/>
     </main>
     );
   }
