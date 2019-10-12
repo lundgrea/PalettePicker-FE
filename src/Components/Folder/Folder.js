@@ -1,10 +1,10 @@
 import React from 'react'
 import './Folder.css'
 
-const Folder = ({folders}) => {
+const Folder = (props) => {
   return (
     <article className="Folder">
-      <h3 id="folder_name">{folders.id}</h3>
+      <h3 id="folder_name">{props.name}</h3>
     </article>
   )
 }
