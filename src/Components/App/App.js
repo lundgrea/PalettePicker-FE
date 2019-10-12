@@ -5,7 +5,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      folders: []
+      folders: [],
+      folderID: "",
+      palettes: [],
+      paletteID: "",
+      currentPalette: []
     }
   }
   componentDidMount = () => {
