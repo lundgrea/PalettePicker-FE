@@ -3,6 +3,8 @@ import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main'
 import './App.css';
 
+const array = []
+
 class App extends Component {
   constructor() {
     super()
@@ -16,11 +18,20 @@ class App extends Component {
     }
   }
 
-  generateRandomColor = ()  => {
-    
+
+  generateRandomColors = ()  => {
+    if (array.length === 5) {
+      this.setState({currentPalette: array})
+      return 
+    } else {
+      let number = '#'+Math.floor(Math.random()*16777215).toString(16);
+      array.push({color: number, isLocked: false})
+      this.generateRandomColors()
+    }
   }
 
   componentDidMount = () => {
+    this.generateRandomColors()
     return fetch(process.env.REACT_APP_BACKEND_URL + '/api/v1/folders')
       .then(res => res.json())
       .then(folders => this.setState({folders}))
