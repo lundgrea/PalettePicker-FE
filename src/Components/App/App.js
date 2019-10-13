@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Main from "../Main/Main";
-import { fetchAllFolders, fetchAllPalettes, fetchAPalette, fetchAFolder } from '../../apiCalls/apiCalls'
+import { fetchAllFolders, fetchAllPalettes, fetchAPalette, fetchAFolder, fetchAFoldersPalettes } from '../../apiCalls/apiCalls'
 import "./App.css";
 
 let array = [];
@@ -74,8 +74,9 @@ class App extends Component {
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
-    this.getAllPalettes();
+    // this.getAllPalettes();
     this.getAFolder(11);
+    this.getAFoldersPalettes(11);
     // this.grabAPalette(16)
   };
 
@@ -85,15 +86,21 @@ class App extends Component {
   //   .catch(error => error);
   // }
 
-  getAllPalettes = () => {
-    fetchAllPalettes()
-    .then(palettes => this.setState({ palettes }))
-    .catch(error => error);
-  }
+  // getAllPalettes = () => {
+  //   fetchAllPalettes()
+  //   .then(palettes => this.setState({ palettes }))
+  //   .catch(error => error);
+  // }
 
   getAFolder = folderId => {
     fetchAFolder(folderId)
     .then(folder => this.setState({ folderID: folder[0].id }))
+    .catch(error => error);
+  }
+
+  getAFoldersPalettes = folderId => {
+    fetchAFoldersPalettes(folderId)
+    .then(palettes => this.setState({ palettes }))
     .catch(error => error);
   }
 
