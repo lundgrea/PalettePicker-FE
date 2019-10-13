@@ -134,7 +134,7 @@ export const patchAPalette= async (paletteId, newValue) => {
         "Content-Type": "application/json"
       }
     };
-    const response = await fetch(process.env.REACT_APP_BACKEND_URL + `/api/v1/folders/${paletteId}`, options)
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL + `/api/v1/palettes/${paletteId}`, options)
     const data = await response.json();
     return data;
   } catch (error) {

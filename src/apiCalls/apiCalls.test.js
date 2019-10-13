@@ -374,12 +374,12 @@ import {
     })
   
     it('should be called with correct params', () =>{
-      deletePalette(11)
-      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/palettes/11", {method: "DELETE"});
+      deletePalette(9)
+      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/palettes/9", {method: "DELETE"});
     });
     
     it('should return a successful response', () =>{
-      expect(deletePalette(11)).resolves.toEqual(true);
+      expect(deletePalette(20)).resolves.toEqual(true);
     });
 
     it("should call fetch with the correct url", () => {
@@ -393,12 +393,171 @@ import {
           ok: false
         })
       })
-      expect(deletePalette(11)).rejects.toEqual(Error('Could not delete palette with ID: 11'))
+      expect(deletePalette(12)).rejects.toEqual(Error('Could not delete palette with ID: 12'))
     });
     it('should return an error if the promise rejects', () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.reject(Error('Could not delete palette with ID: 11'))
+        return Promise.reject(Error('Could not delete palette with ID: 13'))
       })
-      expect(deletePalette(11)).rejects.toEqual(Error('Could not delete palette with ID: 11'))
+      expect(deletePalette(13)).rejects.toEqual(Error('Could not delete palette with ID: 13'))
       })
   })
+
+  describe('deleteFolder', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true
+      })
+    })
+  
+    it('should be called with correct params', () =>{
+      deleteFolder(15)
+      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/folders/15", {method: "DELETE"});
+    });
+    
+    it('should return a successful response', () =>{
+      expect(deleteFolder(15)).resolves.toEqual(true);
+    });
+
+    it("should call fetch with the correct url", () => {
+      deleteFolder(15);
+      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/folders/15", {method: "DELETE"});
+    });
+  
+    it('should return an error', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      expect(deleteFolder(15)).rejects.toEqual(Error('Could not delete folder with ID of: 15 and its associated palettes'))
+    });
+    it('should return an error if the promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('Could not delete folder with ID of: 15 and its associated palettes'))
+      })
+      expect(deleteFolder(15)).rejects.toEqual(Error('Could not delete folder with ID of: 15 and its associated palettes'))
+      })
+  })
+
+  describe('patchAPalette', () => {
+    let mockResponse
+    let mockRequest;
+    
+    beforeEach(() => {
+      mockRequest = {
+        method: 'PATCH',
+        body: undefined,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+      mockResponse = [{
+        c1: "#586BA4",
+        c2: "#594157",
+        c3: "#A0D2DB",
+        c4: "#BEE7E8",
+        c5: "#CFBCDF",
+        created_at: "2019-10-11T19:15:40.747Z",
+        folder_id: 11,
+        id: 20,
+        name: "Whale Life",
+        updated_at: "2019-10-11T19:15:40.747Z"
+      }];
+  
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockResponse)
+        })
+      })
+    })
+  
+    it('should return a successful resonse', () => {
+      expect(patchAPalette(16, 'Worms')).resolves.toEqual(mockResponse);
+    });
+  
+    it("should call fetch with the correct url", () => {
+      patchAPalette(16, 'Worms');
+      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/palettes/16", {"body": "{\"name\":\"Worms\"}", "headers": {"Content-Type": "application/json"}, "method": "PATCH"}
+      );
+    });
+
+    it('should return an error', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      expect(patchAPalette(16, 'Worms')).rejects.toEqual(Error('There was a problem updating your palette'))
+    });
+    it('should return an error if the promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('There was a updating your palette'))
+      })
+      expect(patchAPalette(16, 'Worms')).rejects.toEqual(Error('There was a problem updating your palette'))
+      })
+  });
+
+
+  describe('patchAFolder', () => {
+    let mockResponse
+    let mockRequest;
+    
+    beforeEach(() => {
+      mockRequest = {
+        method: 'PATCH',
+        body: undefined,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+      mockResponse = [
+        {
+        name: 'Cookie Crisps',
+        created_at: "2019-10-11T19:15:40.747Z",
+        id: 19,
+        updated_at: "2019-10-11T19:15:40.747Z"
+      },
+      {
+        name: 'Worms',
+        created_at: "2019-11-11T19:15:40.747Z",
+        id: 25,
+        updated_at: "2019-12-11T19:15:40.747Z"
+      },
+
+    ];
+  
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockResponse)
+        })
+      })
+    })
+  
+    it('should return a successful resonse', () => {
+      expect(patchAFolder(25, 'Worms')).resolves.toEqual(mockResponse);
+    });
+  
+    it("should call fetch with the correct url", () => {
+      patchAFolder(25, 'Worms');
+      expect(window.fetch).toHaveBeenCalledWith(process.env.REACT_APP_BACKEND_URL + "/api/v1/folders/25", {"body": "{\"name\":\"Worms\"}", "headers": {"Content-Type": "application/json"}, "method": "PATCH"}
+      );
+    });
+
+    it('should return an error', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      expect(patchAFolder(25, 'Worms')).rejects.toEqual(Error('There was a problem updating your folder name'))
+    });
+    it('should return an error if the promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('There was a updating your folder name'))
+      })
+      expect(patchAFolder(25, 'Worms')).rejects.toEqual(Error('There was a problem updating your folder name'))
+      })
+  });
