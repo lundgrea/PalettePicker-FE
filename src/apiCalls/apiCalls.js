@@ -123,12 +123,12 @@ export const postNewFolder = async name => {
 };
 
 
-export const patchAPalette= async (paletteId, key, newValue) => {
-  const updatedPalette = `{${key}: newValue }`
+export const patchAPalette= async (paletteId, newValue) => {
+  const updatedPalette = {name: newValue }
 
   try {
     const options = {
-      method: "POST",
+      method: "PATCH",
       body: JSON.stringify(updatedPalette),
       headers: {
         "Content-Type": "application/json"
@@ -143,11 +143,20 @@ export const patchAPalette= async (paletteId, key, newValue) => {
 };
 
 
-
-
-
-// updateAFolder = folderId => {
-//   updateFolder(folderId)
-//   .then(networkMessage => this.setState({networkMessage}))
-//   .catch(error => this.setState({error}))
-// }
+export const patchAFolder= async (folderId, newName) => {
+  const updatedFolder =  {name: newName}
+  try {
+    const options = {
+      method: "PATCH",
+      body: JSON.stringify(updatedFolder),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL + `/api/v1/folders/${folderId}`, options)
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('There was a problem updating your folder name');
+  }
+};
