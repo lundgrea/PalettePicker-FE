@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Main from "../Main/Main";
-import { fetchAllFolders, fetchAllPalettes, fetchAPalette, fetchAFolder, fetchAFoldersPalettes, deleteFolder, deletePalette, postNewPalette, postNewFolder, patchAPalette, patchAFolder } from '../../apiCalls/apiCalls'
+import { 
+  fetchAllFolders, 
+  fetchAllPalettes, 
+  fetchAPalette, 
+  fetchAFolder, 
+  fetchAFoldersPalettes, 
+  deleteFolder, 
+  deletePalette, 
+  postNewPalette, 
+  postNewFolder, 
+  patchAPalette, 
+  patchAFolder 
+} from '../../apiCalls/apiCalls'
 import "./App.css";
 
 let array = [];
@@ -70,15 +82,15 @@ class App extends Component {
     this.generateRandomColors();
     this.getAllFolders();
     // this.getAllPalettes();
-    this.getAFolder(11);
-    this.getAFoldersPalettes(11);
+    // this.getAFolder(11);
+    // this.getAFoldersPalettes(11);
     // this.deleteAPalette(30)
     // this.deleteAFolder(9);
     // this.grabAPalette(16)
     // this.addNewPalette('Jolly', array[0], array[1], array[2], array[3], array[4], 11)
     // this.addNewFolder('Jambo Rambo')
     // this.updateAPalette(19, 'name', 'Bizarre Violet')
-    this.updateAFolder(11, 'Doozy Boozy')
+    // this.updateAFolder(11, 'Doozy Boozy')
   };
 
   getAFolder = folderId => {
@@ -97,7 +109,7 @@ class App extends Component {
   getAPalette = paletteId => {
     fetchAPalette(paletteId)
     .then(currentPalette => this.setState({ currentPalette }))
-  .catch(error => this.setState({error}))
+    .catch(error => this.setState({error}))
   }
 
   getAFoldersPalettes = folderId => {
@@ -109,7 +121,7 @@ class App extends Component {
   getAllPalettes = () => {
     fetchAllPalettes()
     .then(palettes => this.setState({ palettes }))
-  .catch(error => this.setState({error}))
+    .catch(error => this.setState({error}))
   }
 
   addNewPalette = (name, c1, c2, c3, c4, c5, folderId) => {
