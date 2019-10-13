@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import Main from "../Main/Main";
-import { getFolders } from '../../apiCalls/apiCalls'
+import { fetchAllFolders, fetchAllPalettes, fetchAPalette, fetchAFolder } from '../../apiCalls/apiCalls'
 import "./App.css";
 
 let array = [];
@@ -64,13 +64,38 @@ class App extends Component {
     this.setState({ currentPalette: newArray });
   };
 
+  getAllFolders = () => {
+    fetchAllFolders()
+    .then(folders => this.setState({ folders }))
+    .then(isLoading => this.setState({ isLoading: false }))
+    .catch(error => error);
+  }
+
   componentDidMount = () => {
     this.generateRandomColors();
-    getFolders()
-      .then(folders => this.setState({ folders }))
-      .then(isLoading => this.setState({ isLoading: false }))
-      .catch(error => error);
+    this.getAllFolders();
+    this.getAllPalettes();
+    this.getAFolder(11);
+    // this.grabAPalette(16)
   };
+
+  // getAPalette = paletteId => {
+  //   fetchAPalette(paletteId)
+  //   .then(currentPalette => this.setState({ currentPalette }))
+  //   .catch(error => error);
+  // }
+
+  getAllPalettes = () => {
+    fetchAllPalettes()
+    .then(palettes => this.setState({ palettes }))
+    .catch(error => error);
+  }
+
+  getAFolder = folderId => {
+    fetchAFolder(folderId)
+    .then(folder => this.setState({ folderID: folder[0].id }))
+    .catch(error => error);
+  }
 
   render() {
     return (
