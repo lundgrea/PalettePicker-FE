@@ -14,19 +14,19 @@ class FolderForm extends Component {
     this.setState({[e.target.name]: e.target.value});
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = (e, folderName) => {
     e.preventDefault();
-    const newFolder = {
-      id: Date.now(),
-      name: this.state.name,
-      palettes: []
-    }
-    this.addFolder(newFolder);
+    !folderName ? console.log("error") : this.checkForDuplicates(folderName);
     this.clearInputs();
   }
 
+  checkForDuplicates = (folderName) => {
+    let checkNames = this.props.folders.folders.find(folder => folder.name === folderName)
+    checkNames === undefined ? this.props.addNewFolder(folderName) : this.setState({error: "Happy Little Accident: This Folder Name Already Exists. Please Use a Different Name!"});
+  }
+
   clearInputs = () => {
-    this.setState({folderName: ""})
+    this.setState({folderName: "", error: ""})
   }
 
   render() {
@@ -43,6 +43,7 @@ class FolderForm extends Component {
         required/>
         <button 
         id="addFolder-button"
+        onClick={(e) => this.handleSubmit(e, this.state.folderName)}
         >Add Folder</button>
       </form>
     )

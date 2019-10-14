@@ -9,7 +9,8 @@ const FoldersContainer = props => {
       key={index}
       id={folder.id} 
       name={folder.name} 
-      palettes={folder.palettes} />
+      palettes={folder.palettes} 
+      getAFoldersPalettes={props.getAFoldersPalettes}/>
     );
   });
   return (
