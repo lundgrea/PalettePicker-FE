@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  /* background: url("../../assets/bobRoss.jpg") no-repeat center center fixed;
-  background-size: cover; */
+  background: url("../../assets/bobRoss_opacity.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .App {
