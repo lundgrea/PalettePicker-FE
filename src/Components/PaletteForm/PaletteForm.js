@@ -48,19 +48,21 @@ class PaletteForm extends Component {
         Generate Palette
       </button>
       </article>
-      <form id="addPaletteName-form">
-        <label>Add Palette Name</label>
-        <input
-        id="addFolder-input"
-        type="text"
-        placeholder="Palette Name"
-        name="name"
-        value={this.state.name}
-        onChange={this.handleChange}
-        required/>
-        <button>Enter Name</button>
-      </form>
-      <button>SAVE PALETTE</button>
+      <article id="addNameSavePalette-container">
+        <form id="addPaletteName-form">
+          <label>Add Palette Name</label>
+          <input
+          id="addFolder-input"
+          type="text"
+          placeholder="Palette Name"
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+          required/>
+          <button id="addPaletteName-button">Enter Name</button>
+        </form>
+        <button id="savePalette-button">SAVE PALETTE</button>
+      </article>
     </section>
   )
 }

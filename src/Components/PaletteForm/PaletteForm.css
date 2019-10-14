@@ -1,6 +1,7 @@
 .PaletteForm {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 #palette-img {
@@ -27,16 +28,30 @@
   justify-content: space-around;
   align-items: center;
   height: 150px;
-  width: 15%;
+  width: 100%;
   margin: auto;
 }
 
 #generatePalette-container:hover {
   border: 2px solid #FFFFFF;
+  width: 25%;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 25%;
+}
+
+#savePalette-button {
+  width: 25%;
+}
+
+#addNameSavePalette-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: auto;
 }
