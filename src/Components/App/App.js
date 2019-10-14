@@ -89,7 +89,7 @@ class App extends Component {
     fetchAllFolders()
     .then(folders => this.setState({ folders }))
     .then(isLoading => this.setState({ isLoading: false }))
-    .catch(error => this.setState({error}))
+    .catch(error => this.setState({error: "Happy Little Accident While Getting All Folders! Please Try Again."}))
   }
 
   getAPalette = paletteId => {
@@ -119,7 +119,8 @@ class App extends Component {
   addNewFolder = folderName => {
     postNewFolder(folderName)
     .then(networkMessage => this.setState({networkMessage}))
-    .catch(error => this.setState({error}))
+    .then(() => this.getAllFolders())
+    .catch(error => this.setState({error: "Happy Little Accident Adding Your Folder! "}))
   }
 
   updateAPalette = (paletteId, value) => {
@@ -150,7 +151,13 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        {!this.state.isLoading && <Sidebar folders={this.state.folders} />}
+        {!this.state.isLoading 
+        && 
+        <Sidebar 
+        folders={this.state.folders} 
+        addNewFolder={this.addNewFolder}
+        getAllFolders={this.getAllFolders}
+        getAFoldersPalettes={this.getAFoldersPalettes}/>}
         <Main
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
