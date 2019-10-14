@@ -3,8 +3,6 @@ import Sidebar from "../Sidebar/Sidebar";
 import Main from "../Main/Main";
 import "./App.css";
 
-let array = [];
-
 class App extends Component {
   constructor() {
     super();
@@ -18,60 +16,25 @@ class App extends Component {
     };
   }
 
-  generateRandomColors = (condition) => {
+  generateRandomColors = () => {
+    let unlockedSwatches = this.state.currentPalette.map(swatch => {
+      if (!swatch.isLocked) {
+        return {color: hexCodeGen(), isLocked: false}
+      }
+      return swatch
+    })
+
+    let currentPalette = Array(5).fill({}).map(el => {
+      return {color: hexCodeGen(), isLocked: false}
+    })
+
     function hexCodeGen () {
       return "#" + Math.floor(Math.random() * 16777215).toString(16);
     }
-    let currentPalette = Array(condition).fill({}).map(el => {
-      return {color: hexCodeGen(), isLocked: false}
-    })
-    this.setState({currentPalette})
+
+    return this.state.currentPalette.length === 5 ? this.setState({currentPalette: unlockedSwatches}) : this.setState({currentPalette})
+
   }
-
-  // generateRandomColors = (condition) => {
-  //   console.log("beep")
-  //   let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-  //   let currentPalette = Array(condition).map(el => {
-  //     return {color: number, isLocked: false}
-  //   })
-  //   this.setState({currentPalette: currentPalette})
-    //=============================
-    // this.colorSwap();
-    // if (!condition) {
-      // if (array.length === 5) {
-      //   console.log("hi")
-      //   this.setState({ currentPalette: array });
-      //   return;
-      // } else if (condition === "redo") {
-      //   array = [];
-      //   let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-      //   array.push({ color: number, isLocked: false });
-      //   this.generateRandomColors();
-      // } else {
-      //   let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-      //   array.push({ color: number, isLocked: false });
-      //   this.generateRandomColors();
-      // }
-    // } else {
-    //   array = [];
-    //   let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-    //   array.push({ color: number, isLocked: false });
-    //   this.generateRandomColors();
-    // }
-  // };
-
-  colorSwap = () => {
-    return this.state.currentPalette.map(palette => {
-      ("oh no..");
-      if (palette.isLocked === true) {
-        return palette;
-      } else {
-        let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        palette.color = number;
-        return palette;
-      }
-    });
-  };
 
   toggleLock = (e, color) => {
     e.preventDefault();
@@ -87,7 +50,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    this.generateRandomColors(5)
+    this.generateRandomColors()
     return fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/folders")
       .then(res => res.json())
       .then(folders => this.setState({ folders }))
