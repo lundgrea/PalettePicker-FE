@@ -3,8 +3,40 @@
   flex-direction: column;
 }
 
+#palette-img {
+  width: 50%;
+  height: 100px;
+}
+
+#generatePalette-button {
+  border: none;
+  background-color: transparent;
+  color: #D25923;
+  font-size: x-large;
+  font-weight: 800;
+  text-shadow: 
+  -1px -1px 0 #FFF, 
+  1px -1px 0 #FFF, 
+  -1px 1px 0 #FFF,
+  1px 1px 0 #FFF;
+}
+
+#generatePalette-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 15%;
+  margin: auto;
+}
+
+#generatePalette-container:hover {
+  border: 2px solid #FFFFFF;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 25%;
 }

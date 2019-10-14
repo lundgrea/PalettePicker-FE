@@ -15,20 +15,52 @@ class PaletteForm extends Component {
     this.props.generateRandomColors()
   }
 
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newPalette = {
+      id: Date.now(),
+      name: this.state.name,
+      palettes: this.props.currentPalette
+    }
+    this.addNewPalette(newPalette);
+    this.clearInputs();
+  }
+
+  clearInputs = () => {
+    this.setState({folderName: ""})
+  }
+
 
   render() {
   return (
     <section className="PaletteForm">
-     <form>
-      <button 
+      <article id="generatePalette-container">
+      <img id="palette-img"
+      src={require('../../assets/paint-palette.svg')} 
+      onClick={this.generateNewColors}
+      alt=""/>
+      <button id="generatePalette-button"
       onClick={this.generateNewColors}>
         Generate Palette
       </button>
-       <label>Add Palette Name</label>
-       <input></input>
-       <button>Enter Name</button>
-       <button>SAVE PALETTE</button>
-     </form>
+      </article>
+      <form id="addPaletteName-form">
+        <label>Add Palette Name</label>
+        <input
+        id="addFolder-input"
+        type="text"
+        placeholder="Palette Name"
+        name="name"
+        value={this.state.name}
+        onChange={this.handleChange}
+        required/>
+        <button>Enter Name</button>
+      </form>
+      <button>SAVE PALETTE</button>
     </section>
   )
 }
