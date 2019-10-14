@@ -3,9 +3,13 @@ import Folder from "../Folder/Folder";
 import "./FoldersContainer.css";
 
 const FoldersContainer = props => {
-  const allFolders = props.folders.folders.map(folder => {
+  const allFolders = props.folders.folders.map((folder, index) => {
     return (
-      <Folder id={folder.id} name={folder.name} palettes={folder.palettes} />
+      <Folder 
+      key={index}
+      id={folder.id} 
+      name={folder.name} 
+      palettes={folder.palettes} />
     );
   });
   return (

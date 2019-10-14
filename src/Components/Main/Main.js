@@ -10,7 +10,7 @@ const Main = (props) => {
     <main className="Main">
       <Header />
       <ColorsContainer currentPalette={props.currentPalette} toggleLock={props.toggleLock}/>
-      <PaletteForm generateRandomColors={props.generateRandomColors}/>
+      <PaletteForm currentPalette={props.currentPalette} generateRandomColors={props.generateRandomColors}/>
     </main>
   )
 }
