@@ -1,6 +1,24 @@
 .ColorCard {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   height: 100%;
+}
+
+#color-circle {
+  border-radius: 50%;
+  width: 75%;
+  height: 220px;
+  border: 1px solid black;
+}
+
+#lock-img {
+  height: 25px;
+  margin: 2px 2px 2px 2px;
+}
+
+#lock-img:hover {
+  border: 1px solid #FFFFFF;
 }

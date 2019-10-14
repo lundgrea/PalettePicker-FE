@@ -10,4 +10,10 @@
 #header-text {
   margin-right: 20px;
   font-size: 50px;
+  color: #D25923;
+  text-shadow: 
+  -1px -1px 0 #FFF, 
+  1px -1px 0 #FFF, 
+  -1px 1px 0 #FFF,
+  1px 1px 0 #FFF;
 }
