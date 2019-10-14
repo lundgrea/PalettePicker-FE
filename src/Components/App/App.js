@@ -16,8 +16,6 @@ import {
 } from '../../apiCalls/apiCalls'
 import "./App.css";
 
-let array = [];
-
 class App extends Component {
   constructor() {
     super();
@@ -33,37 +31,25 @@ class App extends Component {
     };
   }
 
-  generateRandomColors = condition => {
-    this.colorSwap();
-    if (!condition) {
-      if (array.length === 5) {
-        this.setState({ currentPalette: array });
-        return;
-      } else {
-        let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        array.push({ color: number, isLocked: false });
-        this.generateRandomColors();
+  generateRandomColors = () => {
+    let unlockedSwatches = this.state.currentPalette.map(swatch => {
+      if (!swatch.isLocked) {
+        return {color: hexCodeGen(), isLocked: false}
       }
-    } else {
-      array = [];
-      let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-      array.push({ color: number, isLocked: false });
-      this.generateRandomColors();
-    }
-  };
+      return swatch
+    })
 
-  colorSwap = () => {
-    return this.state.currentPalette.map(palette => {
-      ("oh no..");
-      if (palette.isLocked === true) {
-        return palette;
-      } else {
-        let number = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        palette.color = number;
-        return palette;
-      }
-    });
-  };
+    let currentPalette = Array(5).fill({}).map(el => {
+      return {color: hexCodeGen(), isLocked: false}
+    })
+
+    function hexCodeGen () {
+      return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    return this.state.currentPalette.length === 5 ? this.setState({currentPalette: unlockedSwatches}) : this.setState({currentPalette})
+
+  }
 
   toggleLock = (e, color) => {
     e.preventDefault();

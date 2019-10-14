@@ -3,9 +3,10 @@ import ColorCard from '../ColorCard/ColorCard'
 import './ColorsContainer.css'
 
 const ColorsContainer = (props) => {
-  const allColors = props.currentPalette.map(swatch => {
+  const allColors = props.currentPalette.map((swatch, index) => {
     return (
       <ColorCard
+      key={index}
       color={swatch.color}
       isLocked={swatch.isLocked}
       toggleLock={props.toggleLock}

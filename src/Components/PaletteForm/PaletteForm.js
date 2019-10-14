@@ -12,8 +12,9 @@ class PaletteForm extends Component {
 
   generateNewColors = (e) => {
     e.preventDefault()
-    let redo = "redo"
-    this.props.generateRandomColors(redo)
+    // let newSwatches = this.props.currentPalette.filter(swatch => swatch.isLocked === false)
+    console.log(this.props.currentPalette.length)
+    this.props.generateRandomColors()
   }
 
 
