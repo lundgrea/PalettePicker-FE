@@ -13,8 +13,9 @@ const ColorsContainer = (props) => {
       />
     )
   })
+
   return (
-    <section className="ColorsContainer">
+    <section className='ColorsContainer'>
       {allColors}
     </section>
   )
