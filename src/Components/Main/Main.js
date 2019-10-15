@@ -9,7 +9,7 @@ import Header from '../Header/Header'
 const Main = (props) => {
   return (
     <main className="Main">
-      <Header />
+      <Header clearFolderID={props.clearFolderID}/>
       {!props.folderID &&
       <ColorsContainer 
       palettes={props.palettes}

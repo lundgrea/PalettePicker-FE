@@ -1,7 +1,7 @@
 .PaletteForm {
-  display: flex;
+  /* display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
 #palette-img {

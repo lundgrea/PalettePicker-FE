@@ -1,10 +1,12 @@
 import React from 'react'
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="Header">
-      <h1 id="header-text">Happy Little Palette Picker</h1>
+      <button 
+      id="header-text-button"
+      onClick={e => props.clearFolderID(e)}>Happy Little Palette Picker</button>
     </header>
   )
 }
