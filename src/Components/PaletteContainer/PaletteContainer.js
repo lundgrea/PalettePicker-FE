@@ -14,6 +14,7 @@ const PaletteContainer = (props) => {
     const createPalettes = reformattedPalettes.map(palette => {
       return (
       <ColorsContainer
+        paletteName={palette.name}
         currentPalette={palette.colors}
         folderID={props.folderID}
       />

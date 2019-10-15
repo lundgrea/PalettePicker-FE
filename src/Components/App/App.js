@@ -64,6 +64,11 @@ class App extends Component {
     this.setState({ currentPalette: newArray });
   };
 
+  clearFolderID = (e) => {
+    e.preventDefault()
+    this.setState({folderID: ""})
+  }
+
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
@@ -165,6 +170,9 @@ class App extends Component {
           toggleLock={this.toggleLock}
           palettes={this.state.palettes}
           folderID={this.state.folderID}
+          clearFolderID={this.clearFolderID}
+          folders={this.state.folders}
+          isLoading={this.state.isLoading}
         />
       </main>
     );
