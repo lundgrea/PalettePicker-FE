@@ -171,6 +171,8 @@ class App extends Component {
           palettes={this.state.palettes}
           folderID={this.state.folderID}
           clearFolderID={this.clearFolderID}
+          folders={this.state.folders}
+          isLoading={this.state.isLoading}
         />
       </main>
     );

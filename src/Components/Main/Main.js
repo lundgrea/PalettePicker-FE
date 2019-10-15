@@ -11,7 +11,8 @@ const Main = (props) => {
     <main className="Main">
       <Header clearFolderID={props.clearFolderID}/>
       {!props.folderID &&
-      <ColorsContainer 
+      <ColorsContainer
+      folders={props.folders} 
       palettes={props.palettes}
       currentPalette={props.currentPalette} 
       toggleLock={props.toggleLock}
@@ -22,6 +23,8 @@ const Main = (props) => {
       <PaletteForm
       currentPalette={props.currentPalette} 
       generateRandomColors={props.generateRandomColors}
+      folders={props.folders}
+      isLoading={props.isLoading} 
       />
       }
        

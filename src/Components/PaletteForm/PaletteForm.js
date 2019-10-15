@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import SavePaletteForm from '../SavePaletteForm/SavePaletteForm'
 import './PaletteForm.css'
 
 class PaletteForm extends Component {
@@ -6,6 +7,7 @@ class PaletteForm extends Component {
     super()
     this.state = {
       name: '',
+      folderID: '',
       error: ''
     }
   }
@@ -34,35 +36,49 @@ class PaletteForm extends Component {
     this.setState({folderName: ""})
   }
 
+  displayFolders = () => {
+    console.log("paletteForm", this.props.folders.folders)
+     return this.props.folders.folders.map(folder => {
+      return <a id="folder-item">{folder.name}</a>
+    })
+  }
+
 
   render() {
   return (
     <section className="PaletteForm">
       <article id="generatePalette-container">
       <img id="palette-img"
-      src={require('../../assets/paint-palette.svg')} 
+      src={require('../../assets/paint-palette-white.svg')} 
       onClick={this.generateNewColors}
       alt=""/>
       <button id="generatePalette-button"
       onClick={this.generateNewColors}>
-        Generate Palette
+        Generate New Palette
       </button>
       </article>
       <article id="addNameSavePalette-container">
-        <form id="addPaletteName-form">
-          <label>Add Palette Name</label>
+         {/* <img id="download-img"
+        src={require('../../assets/download.svg')} 
+        onClick={<SavePaletteForm folders={this.props.folders}/>}
+        alt=""/>
+        <button id="savePalette-button" onClick={<SavePaletteForm folders={this.props.folders}/>}>Save Current Palette</button> */}
+        <label>Add Palette Name</label>
           <input
-          id="addFolder-input"
+          id="paletteName-input"
           type="text"
-          placeholder="Palette Name"
-          name="name"
-          value={this.state.name}
+          placeholder="Palette Name..."
+          name="paletteName"
+          value={this.state.paletteName}
           onChange={this.handleChange}
           required/>
-          <button id="addPaletteName-button">Enter Name</button>
-        </form>
-        <button id="savePalette-button">SAVE PALETTE</button>
-      </article>
+          <div id="dropdown-container">
+            <button id="dropdown-button">Save to Existing Folder</button>
+            <div id="dropdown-folders">
+              {!this.props.isLoading && this.displayFolders()}
+            </div>
+          </div>
+        </article> 
     </section>
   )
 }

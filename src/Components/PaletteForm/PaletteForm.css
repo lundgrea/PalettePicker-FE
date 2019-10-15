@@ -1,57 +1,76 @@
 .PaletteForm {
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 #palette-img {
-  width: 50%;
-  height: 100px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 #generatePalette-button {
   border: none;
   background-color: transparent;
-  color: #D25923;
-  font-size: x-large;
-  font-weight: 800;
-  text-shadow: 
-  -1px -1px 0 #FFF, 
-  1px -1px 0 #FFF, 
-  -1px 1px 0 #FFF,
-  1px 1px 0 #FFF;
+  color: #FFF;
+  font-size: 20px;
 }
 
-#generatePalette-container {
+#generatePalette-container, #addNameSavePalette-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 150px;
-  width: 100%;
-  margin: auto;
-}
-
-#generatePalette-container:hover {
-  border: 2px solid #FFFFFF;
+  height: 55px;
   width: 25%;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
+#generatePalette-container:hover,  #addNameSavePalette-container:hover { 
+  border: 2px solid #FFFFFF 
+}
+
+#download-img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 #savePalette-button {
-  width: 25%;
+  border: none;
+  background-color: transparent;
+  color: #FFF;
+  font-size: 20px;
 }
 
-#addNameSavePalette-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin: auto;
+#dropdown-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
+
+#dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdown-folders {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#dropdown-folders a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#dropdown-folders a:hover {background-color: #ddd;}
+
+#dropdown-container:hover #dropdown-folders {display: block;}
+
+#dropdown-container:hover #dropdown-button {background-color: #3e8e41;}
