@@ -98,9 +98,10 @@ class App extends Component {
     .catch(error => this.setState({error}))
   }
 
-  getAFoldersPalettes = folderId => {
-    fetchAFoldersPalettes(folderId)
-    .then(palettes => this.setState({ palettes }))
+  getAFoldersPalettes = (e, folderID) => {
+    e.preventDefault()
+    fetchAFoldersPalettes(folderID)
+    .then(palettes => this.setState({ folderID, palettes }))
     .catch(error => this.setState({error}))
   }
 
@@ -162,6 +163,8 @@ class App extends Component {
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
           toggleLock={this.toggleLock}
+          palettes={this.state.palettes}
+          folderID={this.state.folderID}
         />
       </main>
     );
