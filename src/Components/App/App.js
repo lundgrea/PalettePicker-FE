@@ -72,11 +72,6 @@ class App extends Component {
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
-    // this.deleteAPalette(30)
-    // this.deleteAFolder(9);
-    // this.grabAPalette(16)
-    // this.addNewPalette('Jolly', array[0], array[1], array[2], array[3], array[4], 11)
-    // this.addNewFolder('Jambo Rambo')
     // this.updateAPalette(19, 'name', 'Bizarre Violet')
     // this.updateAFolder(11, 'Doozy Boozy')
   };
@@ -144,7 +139,7 @@ class App extends Component {
     deletePalette(paletteId)
     .then(networkMessage => this.setState({networkMessage}))
     // .then(() => this.getAFoldersPalettes(folderId))
-    .catch(error => this.setState({error}))
+    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Palette'}))
   }
 
   deleteAFolder = (e, folderId) => {
@@ -152,13 +147,15 @@ class App extends Component {
     deleteFolder(folderId)
     .then(networkMessage => this.setState({networkMessage}))
     .then(() => this.getAllFolders())
-    .catch(error => this.setState({error}))
+    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Folder'}))
   }
  
 
   render() {
     return (
       <main className="App">
+        {this.state.error && <h4>{this.state.error}</h4>}
+        {/* {this.state.networkMessage && <h4>{this.state.networkMessage}</h4>} */}
         {!this.state.isLoading 
         && 
         <Sidebar 
@@ -169,8 +166,6 @@ class App extends Component {
         deleteAFolder={this.deleteAFolder}
         />}
         <Main
-          error={this.state.error}
-          networkMessage={this.state.networkMessage}
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
           toggleLock={this.toggleLock}

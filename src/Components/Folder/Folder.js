@@ -10,8 +10,12 @@ const Folder = (props) => {
       className="folder_delete"
       src={require('../../assets/delete.svg')}
       onClick={(e) => props.deleteAFolder(e, props.id)}
+      
       />
-      <h3 id="folder_name">{props.name}</h3>
+      <h3 
+      onClick={(e) => props.getAFoldersPalettes(e, props.id)}
+      id="folder_name">{props.name}
+      </h3>
       <img
       id="folder_more"
       alt="folder_more"
