@@ -1,0 +1,30 @@
+.Folder {
+  display: flex;
+  font-size: 16px;
+}
+
+.folder_delete {
+  height: 25px;
+  margin: 10px;
+}
+.folder_delete:hover {
+  filter: invert(0.5)
+}
+
+.folder_more {
+  height: 25px;
+  margin: 10px;
+}
+
+.folder_more:hover {
+  filter: invert(0.5)
+}
+
+#folder_name {
+  margin: 10px;
+  font-size: 26px;
+}
+
+#folder_name:hover {
+  color: grey
+}

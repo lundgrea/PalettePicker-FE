@@ -139,9 +139,11 @@ class App extends Component {
     .catch(error => this.setState({error}))
   }
 
-  deleteAPalette = paletteId => {
+  deleteAPalette = (e, paletteId, folderId) => {
+    e.preventDefault()
     deletePalette(paletteId)
     .then(networkMessage => this.setState({networkMessage}))
+    // .then(() => this.getAFoldersPalettes(folderId))
     .catch(error => this.setState({error}))
   }
 
@@ -176,6 +178,7 @@ class App extends Component {
           folders={this.state.folders}
           isLoading={this.state.isLoading}
           addNewPalette={this.addNewPalette}
+          deleteAPalette={this.deleteAPalette}
         />
       </main>
     );
