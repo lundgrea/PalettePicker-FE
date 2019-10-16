@@ -138,7 +138,7 @@ class App extends Component {
     e.preventDefault()
     deletePalette(paletteId)
     .then(networkMessage => this.setState({networkMessage}))
-    // .then(() => this.getAFoldersPalettes(folderId))
+    .then(() => this.getAFoldersPalettes(e, folderId))
     .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Palette'}))
   }
 

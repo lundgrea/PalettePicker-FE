@@ -39,6 +39,7 @@ export const fetchAFolder = async folderId => {
 }
 
 export const fetchAFoldersPalettes = async folderId => {
+  console.log("We in here", folderId)
   try {
     const response = await fetch(process.env.REACT_APP_BACKEND_URL + `/api/v1/folders/${folderId}/palettes`)
     const data = await response.json()
