@@ -1,3 +1,11 @@
 .Folder {
   display: flex;
 }
+
+.folder_delete {
+  height: 25px;
+}
+
+.folder_more{
+  height: 25px;
+}
