@@ -10,12 +10,13 @@ const FoldersContainer = props => {
       id={folder.id} 
       name={folder.name} 
       palettes={folder.palettes} 
-      getAFoldersPalettes={props.getAFoldersPalettes}/>
+      getAFoldersPalettes={props.getAFoldersPalettes}
+      deleteAFolder={props.deleteAFolder}/>
     );
   });
   return (
     <article className="FoldersContainer">
-      <h2 id="foldersContainer-header-text">Folders Container</h2>
+      <h2 id="foldersContainer-header-text">saved folders</h2>
       {allFolders}
     </article>
   );

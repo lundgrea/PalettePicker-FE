@@ -145,9 +145,11 @@ class App extends Component {
     .catch(error => this.setState({error}))
   }
 
-  deleteAFolder = folderId => {
+  deleteAFolder = (e, folderId) => {
+    e.preventDefault()
     deleteFolder(folderId)
     .then(networkMessage => this.setState({networkMessage}))
+    .then(() => this.getAllFolders())
     .catch(error => this.setState({error}))
   }
  
@@ -161,7 +163,9 @@ class App extends Component {
         folders={this.state.folders} 
         addNewFolder={this.addNewFolder}
         getAllFolders={this.getAllFolders}
-        getAFoldersPalettes={this.getAFoldersPalettes}/>}
+        getAFoldersPalettes={this.getAFoldersPalettes}
+        deleteAFolder={this.deleteAFolder}
+        />}
         <Main
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
