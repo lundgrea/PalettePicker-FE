@@ -1,10 +1,18 @@
-.FoldersContainer{
-  margin: auto;
-  border-top: 2px solid black;
+.FoldersContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border: 1px solid black;
+  height: 400px;
+  margin: 0px 5px 0px 5px;
+  font-family: 'Caveat', cursive;
 }
 
 #foldersContainer-header-text {
-  font-size: 35px;
-  text-align: center;
-  margin: 30px 0px 15px 0px;
+  font-size: 40px;
+}
+
+#folders-scroll-section {
+  overflow-y: auto;
+  height: 350px;
 }

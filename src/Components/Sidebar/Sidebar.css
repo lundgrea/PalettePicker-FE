@@ -3,11 +3,9 @@
   flex-direction: column;
   width: 25%;
   height: 100vh;
-  border: 2px solid black;
-  filter: alpha(opacity=50);
-
+  background-color: black;
+  opacity: .7;
+  color: white;
   /* font-family: 'Caveat', cursive; */
 }
 
-.Sidebar:hover {
-}

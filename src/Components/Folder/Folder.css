@@ -1,5 +1,38 @@
 .Folder {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#folder_name {
+  border: none;
+  background-color: transparent;
+  width: 75%;
+  height: 50px;
+  text-align: center;
+  align-self: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+}
+
+#folder_name:hover {
+  background-color: white;
+  color: #000;
+}
+
+#delete-img {
+  height: 25px;
+  margin: 2px 2px 2px 2px;
+}
+
+#delete-img:hover {
+  border: 1px solid #FFFFFF;
+}
+
+/* .Folder {
+  display: flex;
   font-size: 16px;
 }
 
@@ -27,4 +60,4 @@
 
 #folder_name:hover {
   color: grey
-}
+} */

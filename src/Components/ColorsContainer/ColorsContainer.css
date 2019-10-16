@@ -1,16 +1,38 @@
 .ColorsContainer{
-  /* height: 200px; */
   display: flex;
+  flex-flow: row wrap;
   float: right;
-  width: 82%;
+  width: 90%;
   margin-bottom: 20px;
+  border-radius: 20px;
+  font-family: 'Caveat', cursive;
+}
+
+#paletteName-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-shadow: 
+  -1px -1px 0 #000, 
+  1px -1px 0 #000, 
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+#delete-palette-img {
+  height: 20px;
+  margin: 2px 2px 2px 30px;
 }
 
 
-.palette_delete {
+/* .palette_delete {
   height: 25px;
   margin: 10px;
 }
+
 .palette_delete:hover {
   filter: invert(0.5)
-}
+} */

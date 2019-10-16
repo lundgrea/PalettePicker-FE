@@ -20,13 +20,15 @@ const ColorsContainer = (props) => {
 
   return (
     <section className='ColorsContainer'>
-      {props.deleteAPalette ? <img 
-      id="palette_delete"
-      alt="palette_delete"
-      className="palette_delete"
-      src={require('../../assets/delete.svg')}
-      onClick={(e) => props.deleteAPalette(e, props.id, props.folderID)}/> : undefined}
-      {props.paletteName ? <h2 id="savedPaletteName">{props.paletteName}</h2> : undefined}
+      {props.paletteName ? 
+      <article id="paletteName-container">
+        <h2 id="savedPaletteName">{props.paletteName}</h2>
+        <img id="delete-palette-img" 
+        src={require('../../assets/delete.svg')} 
+        onClick={(e) => props.deleteAPalette(e, props.id, props.folderID)}/>
+      </article>
+      : 
+      undefined}
       {allColors}
     </section>
   )
