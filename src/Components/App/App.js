@@ -44,7 +44,7 @@ class App extends Component {
     })
 
     function hexCodeGen () {
-      return "#" + Math.floor(Math.random() * 16777215).toString(16);
+      return '#' + Math.random().toString(16).substr(-6);
     }
 
     return this.state.currentPalette.length === 5 ? this.setState({currentPalette: unlockedSwatches}) : this.setState({currentPalette})
