@@ -35,6 +35,10 @@ class PaletteForm extends Component {
     })
   }
 
+  toggleSavePaletteInfo = () => {
+
+  }
+
   getFolderName = (e) => {
     e.preventDefault()
     let name = e.currentTarget.innerHTML
@@ -56,17 +60,14 @@ class PaletteForm extends Component {
       src={require('../../assets/paint-palette-white.svg')} 
       onClick={this.generateNewColors}
       alt=""/>
-      <button id="generatePalette-button"
-      onClick={this.generateNewColors}>
-        Generate New Palette
-      </button>
+      <button id="generatePalette-button" onClick={this.generateNewColors}>Generate New Palette</button>
       </article>
-      <article id="addNameSavePalette-container">
-         {/* <img id="download-img"
+      <article id="savePalette-container">
+         <img id="download-img"
         src={require('../../assets/download.svg')} 
-        onClick={<SavePaletteForm folders={this.props.folders}/>}
         alt=""/>
-        <button id="savePalette-button" onClick={<SavePaletteForm folders={this.props.folders}/>}>Save Current Palette</button> */}
+        <button id="savePalette-button">Save Current Palette</button>
+        <form id="addNameSavePalette-container" hidden>
         <label>Add Palette Name</label>
           <input
           id="paletteName-input"
@@ -81,6 +82,7 @@ class PaletteForm extends Component {
               {!this.props.isLoading && this.displayFolders()}
             </div>
           </div>
+        </form>
         </article> 
     </section>
   )
