@@ -14,18 +14,19 @@
   align-self: center;
   font-size: 20px;
   font-weight: bolder;
+  color: white;
 }
 
 #folder_name:hover {
-  background-color: #000;
-  color: #FFF;
+  background-color: white;
+  color: #000;
 }
 
-#open-folder-img, #delete-img {
+#delete-img {
   height: 25px;
   margin: 2px 2px 2px 2px;
 }
 
-#open-folder-img:hover, #delete-img:hover {
+#delete-img:hover {
   border: 1px solid #FFFFFF;
 }
