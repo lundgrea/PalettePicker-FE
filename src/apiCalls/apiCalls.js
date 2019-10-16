@@ -76,7 +76,6 @@ export const deletePalette = async paletteId => {
 
 
 export const postNewPalette = async (name, c1, c2, c3, c4, c5, folderId) => {
-  console.log('all the lively things in the apicalls,', name, c1, c2, c3, c4, c5, folderId)
   const newPalette = 
   { 
     name: name, 

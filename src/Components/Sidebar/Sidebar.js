@@ -12,6 +12,7 @@ const Sidebar = props => {
       getAllFolders={props.getAllFolders}/>
       <FoldersContainer 
       folders={props.folders} 
+      deleteAFolder={props.deleteAFolder}
       getAFoldersPalettes={props.getAFoldersPalettes}/>
     </aside>
   );

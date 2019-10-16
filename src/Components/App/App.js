@@ -72,11 +72,6 @@ class App extends Component {
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
-    // this.deleteAPalette(30)
-    // this.deleteAFolder(9);
-    // this.grabAPalette(16)
-    // this.addNewPalette('Jolly', array[0], array[1], array[2], array[3], array[4], 11)
-    // this.addNewFolder('Jambo Rambo')
     // this.updateAPalette(19, 'name', 'Bizarre Violet')
     // this.updateAFolder(11, 'Doozy Boozy')
   };
@@ -139,29 +134,37 @@ class App extends Component {
     .catch(error => this.setState({error}))
   }
 
-  deleteAPalette = paletteId => {
+  deleteAPalette = (e, paletteId, folderId) => {
+    e.preventDefault()
     deletePalette(paletteId)
     .then(networkMessage => this.setState({networkMessage}))
-    .catch(error => this.setState({error}))
+    // .then(() => this.getAFoldersPalettes(folderId))
+    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Palette'}))
   }
 
-  deleteAFolder = folderId => {
+  deleteAFolder = (e, folderId) => {
+    e.preventDefault()
     deleteFolder(folderId)
     .then(networkMessage => this.setState({networkMessage}))
-    .catch(error => this.setState({error}))
+    .then(() => this.getAllFolders())
+    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Folder'}))
   }
  
 
   render() {
     return (
       <main className="App">
+        {this.state.error && <h4>{this.state.error}</h4>}
+        {/* {this.state.networkMessage && <h4>{this.state.networkMessage}</h4>} */}
         {!this.state.isLoading 
         && 
         <Sidebar 
         folders={this.state.folders} 
         addNewFolder={this.addNewFolder}
         getAllFolders={this.getAllFolders}
-        getAFoldersPalettes={this.getAFoldersPalettes}/>}
+        getAFoldersPalettes={this.getAFoldersPalettes}
+        deleteAFolder={this.deleteAFolder}
+        />}
         <Main
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
@@ -172,6 +175,7 @@ class App extends Component {
           folders={this.state.folders}
           isLoading={this.state.isLoading}
           addNewPalette={this.addNewPalette}
+          deleteAPalette={this.deleteAPalette}
         />
       </main>
     );

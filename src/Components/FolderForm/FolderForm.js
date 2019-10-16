@@ -36,7 +36,7 @@ class FolderForm extends Component {
         <input
         id="addFolder-input"
         type="text"
-        placeholder="Folder Name"
+        placeholder="Enter New Folder Name"
         name="folderName"
         value={this.state.folderName}
         onChange={this.handleChange}

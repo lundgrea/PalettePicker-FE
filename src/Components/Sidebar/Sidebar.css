@@ -4,5 +4,10 @@
   width: 25%;
   height: 100vh;
   border: 2px solid black;
+  filter: alpha(opacity=50);
+
   /* font-family: 'Caveat', cursive; */
+}
+
+.Sidebar:hover {
 }
