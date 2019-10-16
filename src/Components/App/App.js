@@ -169,6 +169,8 @@ class App extends Component {
         deleteAFolder={this.deleteAFolder}
         />}
         <Main
+          error={this.state.error}
+          networkMessage={this.state.networkMessage}
           currentPalette={this.state.currentPalette}
           generateRandomColors={this.generateRandomColors}
           toggleLock={this.toggleLock}

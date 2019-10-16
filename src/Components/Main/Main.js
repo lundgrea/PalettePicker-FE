@@ -4,11 +4,14 @@ import ColorsContainer from '../ColorsContainer/ColorsContainer'
 import PaletteForm from '../PaletteForm/PaletteForm'
 import PaletteContainer from '../PaletteContainer/PaletteContainer'
 import Header from '../Header/Header'
+import { thisExpression } from '@babel/types'
 
 
 const Main = (props) => {
   return (
     <main className="Main">
+      {props.error && <h4>{props.error}</h4>}
+      {props.networkMessage && <h4>{props.networkMessage}</h4>}
       <Header clearFolderID={props.clearFolderID}/>
       {!props.folderID &&
       <ColorsContainer
