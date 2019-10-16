@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import SavePaletteForm from '../SavePaletteForm/SavePaletteForm'
 import './PaletteForm.css'
 
 class PaletteForm extends Component {
@@ -7,7 +6,7 @@ class PaletteForm extends Component {
     super()
     this.state = {
       name: '',
-      folderID: '',
+      localFolderID: '',
       error: ''
     }
   }
@@ -21,27 +20,32 @@ class PaletteForm extends Component {
     this.setState({[e.target.name]: e.target.value});
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const newPalette = {
-      id: Date.now(),
-      name: this.state.name,
-      palettes: this.props.currentPalette
-    }
-    this.addNewPalette(newPalette);
-    this.clearInputs();
-  }
-
   clearInputs = () => {
-    this.setState({folderName: ""})
+    this.setState({name: "", error: "", localFolderID: ""})
   }
 
   displayFolders = () => {
-    console.log("paletteForm", this.props.folders.folders)
      return this.props.folders.folders.map(folder => {
-      return <a id="folder-item">{folder.name}</a>
+      return  (
+      <p 
+      onClick={e => this.getFolderName(e)}      
+      id="folder-item-button">{folder.name}
+      </p>
+      )
     })
   }
+
+  getFolderName = (e) => {
+    e.preventDefault()
+    let name = e.currentTarget.innerHTML
+    console.log('that damn name', name)
+    let foundFolderID = this.props.folders.folders.find(folder=> folder.name === name).id
+    console.log('foundFolderid', foundFolderID)
+    this.setState({localFolderID: foundFolderID})
+      !this.state.name && !this.state.localFolderID ? this.setState([{error: 'Error adding palette'}]) : this.props.addNewPalette(this.state.name, this.props.currentPalette[0].color, this.props.currentPalette[1].color, this.props.currentPalette[2].color, this.props.currentPalette[3].color, this.props.currentPalette[4].color, foundFolderID)
+    // this.clearInputs();
+  }
+
 
 
   render() {
@@ -66,10 +70,9 @@ class PaletteForm extends Component {
         <label>Add Palette Name</label>
           <input
           id="paletteName-input"
-          type="text"
           placeholder="Palette Name..."
-          name="paletteName"
-          value={this.state.paletteName}
+          name="name"
+          value={this.state.name}
           onChange={this.handleChange}
           required/>
           <div id="dropdown-container">

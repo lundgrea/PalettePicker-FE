@@ -24,7 +24,8 @@ const Main = (props) => {
       currentPalette={props.currentPalette} 
       generateRandomColors={props.generateRandomColors}
       folders={props.folders}
-      isLoading={props.isLoading} 
+      isLoading={props.isLoading}
+      addNewPalette={props.addNewPalette} 
       />
       }
        

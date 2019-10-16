@@ -72,9 +72,6 @@ class App extends Component {
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
-    // this.getAllPalettes();
-    // this.getAFolder(11);
-    // this.getAFoldersPalettes(11);
     // this.deleteAPalette(30)
     // this.deleteAFolder(9);
     // this.grabAPalette(16)
@@ -119,7 +116,8 @@ class App extends Component {
   addNewPalette = (name, c1, c2, c3, c4, c5, folderId) => {
     postNewPalette(name, c1, c2, c3, c4, c5, folderId)
     .then(networkMessage => this.setState({networkMessage}))
-    .catch(error => this.setState({error}))
+    .then(() => this.getAllFolders())
+    .catch(error => this.setState({error: "Happy Little Accident Adding Your Palette!"}))
   }
 
   addNewFolder = folderName => {
@@ -173,6 +171,7 @@ class App extends Component {
           clearFolderID={this.clearFolderID}
           folders={this.state.folders}
           isLoading={this.state.isLoading}
+          addNewPalette={this.addNewPalette}
         />
       </main>
     );
