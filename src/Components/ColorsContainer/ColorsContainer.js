@@ -3,7 +3,6 @@ import ColorCard from '../ColorCard/ColorCard'
 import './ColorsContainer.css'
 
 const ColorsContainer = (props) => {
-  console.log(props)
   const allColors = props.currentPalette.map((swatch, index) => {
     return (
       <ColorCard

@@ -1,7 +1,7 @@
 .FoldersContainer {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   border: 1px solid black;
   height: 400px;
   margin: 0px 5px 0px 5px;

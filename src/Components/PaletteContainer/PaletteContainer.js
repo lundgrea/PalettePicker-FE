@@ -22,7 +22,7 @@ const PaletteContainer = (props) => {
     })
 
     return (
-      <article>
+      <article className="PaletteContainer">
         {createPalettes}
       </article>
     )
