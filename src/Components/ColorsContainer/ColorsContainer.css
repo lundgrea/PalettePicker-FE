@@ -2,7 +2,8 @@
   /* height: 200px; */
   display: flex;
   float: right;
-  width: 82%;
+  width: 90%;
   margin-bottom: 20px;
+  border-radius: 20px;
 }
 

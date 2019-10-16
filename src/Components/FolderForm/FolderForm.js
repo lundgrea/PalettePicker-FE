@@ -32,7 +32,8 @@ class FolderForm extends Component {
   render() {
     return (
       <form className="FolderForm">
-        <h2 id="addFolder-text">Create a New Folder</h2>
+        <label id="addFolder-text">Create a New Folder</label>
+        <div id="input-button-container">
         <input
         id="addFolder-input"
         type="text"
@@ -41,10 +42,12 @@ class FolderForm extends Component {
         value={this.state.folderName}
         onChange={this.handleChange}
         required/>
-        <button 
+        <img 
         id="addFolder-button"
+        src={require('../../assets/add.svg')}
         onClick={(e) => this.handleSubmit(e, this.state.folderName)}
-        >Add Folder</button>
+        />
+        </div>
       </form>
     )
   }
