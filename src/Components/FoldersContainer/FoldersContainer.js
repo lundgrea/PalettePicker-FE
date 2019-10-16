@@ -15,8 +15,10 @@ const FoldersContainer = props => {
   });
   return (
     <article className="FoldersContainer">
-      <h2 id="foldersContainer-header-text">Folders Container</h2>
-      {allFolders}
+      <h2 id="foldersContainer-header-text">Saved Folders</h2>
+        <div id="folders-scroll-section">
+        {allFolders}
+        </div>
     </article>
   );
 };
