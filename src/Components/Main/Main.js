@@ -4,6 +4,8 @@ import ColorsContainer from '../ColorsContainer/ColorsContainer'
 import PaletteForm from '../PaletteForm/PaletteForm'
 import PaletteContainer from '../PaletteContainer/PaletteContainer'
 import Header from '../Header/Header'
+import PropTypes from 'prop-types'
+
 
 
 const Main = (props) => {
@@ -39,4 +41,17 @@ const Main = (props) => {
   )
 }
 
-export default Main
+export default Main;
+
+Main.propTypes = {
+  addNewPalette: PropTypes.func,
+  clearFolderID: PropTypes.func,
+  currentPalette: PropTypes.array,
+  deleteAPalette: PropTypes.func,
+  folderID: PropTypes.string,
+  folders: PropTypes.object,
+  generateRandomColors: PropTypes.func,
+  isLoading: PropTypes.bool,
+  palettes: PropTypes.array,
+  toggleLock: PropTypes.func
+} 

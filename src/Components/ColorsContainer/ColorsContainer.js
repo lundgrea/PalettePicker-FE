@@ -1,6 +1,7 @@
 import React from 'react'
 import ColorCard from '../ColorCard/ColorCard'
 import './ColorsContainer.css'
+import PropTypes from 'prop-types';
 
 const ColorsContainer = (props) => {
   const allColors = props.currentPalette.map((swatch, index) => {
@@ -35,3 +36,11 @@ const ColorsContainer = (props) => {
 }
 
 export default ColorsContainer;
+
+ColorsContainer.propTypes = {
+  currentPalette: PropTypes.array,
+  folderID: PropTypes.string,
+  folders: PropTypes.object,
+  palettes: PropTypes.array,
+  toggleLock: PropTypes.func
+} 

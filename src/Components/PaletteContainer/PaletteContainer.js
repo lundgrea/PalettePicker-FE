@@ -1,6 +1,7 @@
 import React from 'react'
 import './PaletteContainer.css'
 import ColorsContainer  from '../ColorsContainer/ColorsContainer'
+import PropTypes from 'prop-types'
 
 const PaletteContainer = (props) => {
   const reformattedPalettes = props.palettes.map(palette => {
@@ -31,4 +32,11 @@ const PaletteContainer = (props) => {
 }
 
 export default PaletteContainer;
+
+PaletteContainer.propTypes = {
+  currentPalette: PropTypes.array,
+  deleteAPalette: PropTypes.func,
+  folderID: PropTypes.string,
+  palettes: PropTypes.array
+} 
 
