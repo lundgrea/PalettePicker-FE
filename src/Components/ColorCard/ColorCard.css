@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* width: 100%; */
-  /* height: 100%; */
+
 }
 
 #color-circle {
@@ -21,4 +20,9 @@
 
 #lock-img:hover {
   border: 1px solid #FFFFFF;
+}
+
+p {
+  color: white;
+  font-size: 20px;
 }

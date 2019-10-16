@@ -18,7 +18,7 @@ const ColorsContainer = (props) => {
 
   return (
     <section className='ColorsContainer'>
-      {props.paletteName ? <h2 id="savedPaletteName">{props.paletteName}</h2> : undefined}
+      {props.paletteName ? <article id="paletteName-container"><h2 id="savedPaletteName">{props.paletteName}</h2></article>: undefined}
       {allColors}
     </section>
   )

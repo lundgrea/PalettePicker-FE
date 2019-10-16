@@ -1,9 +1,22 @@
 .ColorsContainer{
-  /* height: 200px; */
   display: flex;
+  flex-flow: row wrap;
   float: right;
   width: 90%;
   margin-bottom: 20px;
   border-radius: 20px;
+  font-family: 'Caveat', cursive;
+}
+
+#paletteName-container {
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-shadow: 
+  -1px -1px 0 #000, 
+  1px -1px 0 #000, 
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
