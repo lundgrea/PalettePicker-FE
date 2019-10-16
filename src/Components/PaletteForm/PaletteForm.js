@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './PaletteForm.css'
+import PropTypes from 'prop-types'
 
 class PaletteForm extends Component {
   constructor() {
@@ -38,7 +39,6 @@ class PaletteForm extends Component {
   }
 
   toggleViewForms = () => {
-    console.log("oh hey")
     this.setState({viewForms: !this.state.viewForms})
   }
 
@@ -104,3 +104,12 @@ class PaletteForm extends Component {
 }
 
 export default PaletteForm;
+
+PaletteForm.propTypes = {
+  currentPalette: PropTypes.array,
+  generateRandomColors: PropTypes.func,
+  folders: PropTypes.object,
+  isLoading: PropTypes.bool,
+  addNewPalette: PropTypes.func
+} 
+
