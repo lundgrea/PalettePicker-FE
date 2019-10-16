@@ -7,10 +7,13 @@ const ColorsContainer = (props) => {
     return (
       <ColorCard
       name={swatch.name ? <h2 id="savedPaletteName">{swatch.name}</h2> : undefined}
+      delete={props.deleteAPalette || null}
+      folderID={props.folderID || null}
       key={index}
       color={swatch.color}
       isLocked={swatch.isLocked}
       toggleLock={props.toggleLock}
+      id={swatch.id}
       />
     )
   })
@@ -20,7 +23,9 @@ const ColorsContainer = (props) => {
       {props.paletteName ? 
       <article id="paletteName-container">
         <h2 id="savedPaletteName">{props.paletteName}</h2>
-        <img id="delete-palette-img" src={require('../../assets/delete.svg')} />
+        <img id="delete-palette-img" 
+        src={require('../../assets/delete.svg')} 
+        onClick={(e) => props.deleteAPalette(e, props.id, props.folderID)}/>
       </article>
       : 
       undefined}

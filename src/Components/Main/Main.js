@@ -33,6 +33,7 @@ const Main = (props) => {
         palettes={props.palettes}
         currentPalette={props.currentPalette} 
         folderID={props.folderID}
+        deleteAPalette={props.deleteAPalette}
       />}
     </main>
   )

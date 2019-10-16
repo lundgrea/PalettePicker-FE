@@ -17,6 +17,8 @@ const PaletteContainer = (props) => {
         paletteName={palette.name}
         currentPalette={palette.colors}
         folderID={props.folderID}
+        deleteAPalette={props.deleteAPalette}
+        id={palette.id}
       />
       )
     })

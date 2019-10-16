@@ -42,11 +42,10 @@ class PaletteForm extends Component {
   getFolderName = (e) => {
     e.preventDefault()
     let name = e.currentTarget.innerHTML
-    console.log('that damn name', name)
     let foundFolderID = this.props.folders.folders.find(folder=> folder.name === name).id
-    console.log('foundFolderid', foundFolderID)
     this.setState({localFolderID: foundFolderID})
-      !this.state.name && !this.state.localFolderID ? this.setState([{error: 'Error adding palette'}]) : this.props.addNewPalette(this.state.name, this.props.currentPalette[0].color, this.props.currentPalette[1].color, this.props.currentPalette[2].color, this.props.currentPalette[3].color, this.props.currentPalette[4].color, foundFolderID)
+    !this.state.name && !this.state.localFolderID ? this.setState([{error: 'Error adding palette'}]) : this.props.addNewPalette(this.state.name, this.props.currentPalette[0].color, this.props.currentPalette[1].color, this.props.currentPalette[2].color, this.props.currentPalette[3].color, this.props.currentPalette[4].color, foundFolderID)
+    // this.generateNewColors(e)
     // this.clearInputs();
   }
 

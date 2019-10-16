@@ -10,7 +10,8 @@ const FoldersContainer = props => {
       id={folder.id} 
       name={folder.name} 
       palettes={folder.palettes} 
-      getAFoldersPalettes={props.getAFoldersPalettes}/>
+      getAFoldersPalettes={props.getAFoldersPalettes}
+      deleteAFolder={props.deleteAFolder}/>
     );
   });
   return (
