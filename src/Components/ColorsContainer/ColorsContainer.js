@@ -17,7 +17,13 @@ const ColorsContainer = (props) => {
 
   return (
     <section className='ColorsContainer'>
-      {props.paletteName ? <article id="paletteName-container"><h2 id="savedPaletteName">{props.paletteName}</h2></article>: undefined}
+      {props.paletteName ? 
+      <article id="paletteName-container">
+        <h2 id="savedPaletteName">{props.paletteName}</h2>
+        <img id="delete-palette-img" src={require('../../assets/delete.svg')} />
+      </article>
+      : 
+      undefined}
       {allColors}
     </section>
   )
