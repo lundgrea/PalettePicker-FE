@@ -4,23 +4,34 @@
   height: 150px;
   width: 100%;
   margin: 5px 5px 5px 5px;
+  font-family: 'Caveat', cursive;
 }
 
 #addFolder-text {
+  display: flex;
   color: #FFF;
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+#input-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 #addFolder-input {
   width: 75%;
-  margin: auto;
   border-radius: 5px;
   height: 35px;
-  font-size: 15px;
+  font-size: 20px;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 #addFolder-button {
-  width: 20%;
-  margin: auto;
-  border-radius: 5px;
+  width: 10%;
   height: 35px;
 }
