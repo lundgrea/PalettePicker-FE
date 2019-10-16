@@ -7,6 +7,8 @@ class PaletteForm extends Component {
     this.state = {
       name: '',
       localFolderID: '',
+      isSaved: false,
+      viewForms: false,
       error: ''
     }
   }
@@ -35,8 +37,9 @@ class PaletteForm extends Component {
     })
   }
 
-  toggleSavePaletteInfo = () => {
-
+  toggleViewForms = () => {
+    console.log("oh hey")
+    this.setState({viewForms: !this.state.viewForms})
   }
 
   getFolderName = (e) => {
@@ -54,36 +57,47 @@ class PaletteForm extends Component {
   render() {
   return (
     <section className="PaletteForm">
+      {!this.state.viewForms ?
+      <div id="initial-palette-container">
       <article id="generatePalette-container">
-      <img id="palette-img"
-      src={require('../../assets/paint-palette-white.svg')} 
-      onClick={this.generateNewColors}
-      alt=""/>
-      <button id="generatePalette-button" onClick={this.generateNewColors}>Generate New Palette</button>
+        <img id="palette-img"
+        src={require('../../assets/paint-palette-white.svg')} 
+        onClick={this.generateNewColors}
+        alt=""/>
+        <button id="generatePalette-button" onClick={this.generateNewColors}>Generate New Palette</button>
       </article>
       <article id="savePalette-container">
-         <img id="download-img"
-        src={require('../../assets/download.svg')} 
-        alt=""/>
-        <button id="savePalette-button">Save Current Palette</button>
-        <form id="addNameSavePalette-container" hidden>
-        <label>Add Palette Name</label>
-          <input
-          id="paletteName-input"
-          placeholder="Palette Name..."
-          name="name"
-          value={this.state.name}
-          onChange={this.handleChange}
-          required/>
+        <div id="save-palette-buttons-container">
+          <img id="download-img" src={require('../../assets/download.svg')} alt="" onClick={this.toggleViewForms}/>
+          <button id="savePalette-button" onClick={this.toggleViewForms}>Save Current Palette</button> 
+        </div>
+      </article>
+      </div>
+      :
+        <form id="save-palette-forms-container">
+          <div id="add-name-label-and-input">
+            <label>Add Palette Name</label>
+            <input
+            id="paletteName-input"
+            placeholder="Palette Name..."
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+            required/>
+          </div>
           <div id="dropdown-container">
-            <button id="dropdown-button">Save to Existing Folder</button>
+            <button id="dropdown-button">Pick Folder</button>
             <div id="dropdown-folders">
               {!this.props.isLoading && this.displayFolders()}
             </div>
           </div>
+          <div id="submit-button-container">
+            <button id="submit-button"
+            onClick={this.toggleViewForms}>Submit</button>
+          </div>
         </form>
-        </article> 
-    </section>
+      }
+      </section>
   )
 }
 
