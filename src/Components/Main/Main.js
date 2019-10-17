@@ -49,7 +49,6 @@ Main.propTypes = {
   currentPalette: PropTypes.array,
   deleteAPalette: PropTypes.func,
   folderID: PropTypes.string,
-  folders: PropTypes.array,
   generateRandomColors: PropTypes.func,
   isLoading: PropTypes.bool,
   palettes: PropTypes.array,

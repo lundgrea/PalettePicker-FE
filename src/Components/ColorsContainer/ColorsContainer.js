@@ -40,8 +40,7 @@ export default ColorsContainer;
 
 ColorsContainer.propTypes = {
   currentPalette: PropTypes.array,
-  folderID: PropTypes.string,
-  folders: PropTypes.array,
+  folderID: PropTypes.number,
   palettes: PropTypes.array,
   toggleLock: PropTypes.func
 } 

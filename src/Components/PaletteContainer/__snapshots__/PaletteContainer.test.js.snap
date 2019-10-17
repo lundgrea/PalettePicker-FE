@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaletteContainer should match the snapshot with all data passed in correctly 1`] = `
+<article
+  className="PaletteContainer"
+>
+  <ColorsContainer
+    currentPalette={
+      Array [
+        Object {
+          "color": "#586BA4",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#594157",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#A0D2DB",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#BEE7E8",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#CFBCDF",
+          "isLocked": true,
+        },
+      ]
+    }
+    deleteAPalette={[MockFunction]}
+    folderID={16558}
+    id={114}
+    paletteName="Whale Life"
+  />
+  <ColorsContainer
+    currentPalette={
+      Array [
+        Object {
+          "color": "#C4BBAF",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#A5978B",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#5C4742",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#8D5B4C",
+          "isLocked": true,
+        },
+        Object {
+          "color": "#5A2A27",
+          "isLocked": true,
+        },
+      ]
+    }
+    deleteAPalette={[MockFunction]}
+    folderID={16558}
+    id={115}
+    paletteName="SLOTH"
+  />
+</article>
+`;

@@ -36,7 +36,6 @@ export default PaletteContainer;
 PaletteContainer.propTypes = {
   currentPalette: PropTypes.array,
   deleteAPalette: PropTypes.func,
-  folderID: PropTypes.string,
-  palettes: PropTypes.array
+  folderID: PropTypes.number,
 } 
 

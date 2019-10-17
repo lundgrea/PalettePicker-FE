@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should match the snapshot with all data passed in correctly 1`] = `
+<main
+  className="Main"
+>
+  <Header
+    clearFolderID={[MockFunction]}
+  />
+  <ColorsContainer
+    currentPalette={
+      Array [
+        Object {
+          "color": "#2C7559",
+          "isLocked": false,
+        },
+        Object {
+          "color": "57d576",
+          "isLocked": false,
+        },
+        Object {
+          "color": "#a35c95",
+          "isLocked": false,
+        },
+        Object {
+          "color": "#461d33",
+          "isLocked": false,
+        },
+        Object {
+          "color": "413134",
+          "isLocked": false,
+        },
+      ]
+    }
+    folderID=""
+    folders={
+      Object {
+        "folders": Array [
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16556,
+            "name": "Bold",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16557,
+            "name": "Shy",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16558,
+            "name": "Animals",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16559,
+            "name": "Winding Down",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16560,
+            "name": "Monster Mash",
+            "updated_at": "2019-10-17",
+          },
+        ],
+      }
+    }
+    palettes={Array []}
+    toggleLock={[MockFunction]}
+  />
+  <PaletteForm
+    addNewPalette={[MockFunction]}
+    currentPalette={
+      Array [
+        Object {
+          "color": "#2C7559",
+          "isLocked": false,
+        },
+        Object {
+          "color": "57d576",
+          "isLocked": false,
+        },
+        Object {
+          "color": "#a35c95",
+          "isLocked": false,
+        },
+        Object {
+          "color": "#461d33",
+          "isLocked": false,
+        },
+        Object {
+          "color": "413134",
+          "isLocked": false,
+        },
+      ]
+    }
+    folders={
+      Object {
+        "folders": Array [
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16556,
+            "name": "Bold",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16557,
+            "name": "Shy",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16558,
+            "name": "Animals",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16559,
+            "name": "Winding Down",
+            "updated_at": "2019-10-17",
+          },
+          Object {
+            "created_at": "2019-10-16",
+            "id": 16560,
+            "name": "Monster Mash",
+            "updated_at": "2019-10-17",
+          },
+        ],
+      }
+    }
+    generateRandomColors={[MockFunction]}
+    isLoading={false}
+  />
+</main>
+`;

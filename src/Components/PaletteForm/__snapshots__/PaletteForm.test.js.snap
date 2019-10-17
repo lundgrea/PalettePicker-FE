@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaletteForm should match the snapshot with all data passed in correctly 1`] = `
+<section
+  className="PaletteForm"
+>
+  <div
+    id="initial-palette-container"
+  >
+    <article
+      id="generatePalette-container"
+    >
+      <img
+        alt=""
+        id="palette-img"
+        onClick={[Function]}
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "paint-palette-white.svg",
+          }
+        }
+      />
+      <button
+        id="generatePalette-button"
+        onClick={[Function]}
+      >
+        Generate New Palette
+      </button>
+    </article>
+    <article
+      id="savePalette-container"
+    >
+      <div
+        id="save-palette-buttons-container"
+      >
+        <img
+          alt=""
+          id="download-img"
+          onClick={[Function]}
+          src={
+            Object {
+              "ReactComponent": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "render": [Function],
+              },
+              "__esModule": true,
+              "default": "download.svg",
+            }
+          }
+        />
+        <button
+          id="savePalette-button"
+          onClick={[Function]}
+        >
+          Save Current Palette
+        </button>
+      </div>
+    </article>
+  </div>
+</section>
+`;

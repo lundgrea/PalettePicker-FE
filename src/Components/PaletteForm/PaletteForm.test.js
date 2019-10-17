@@ -25,6 +25,10 @@ describe('PaletteForm', () => {
     />);
   })
 
+  it('should match the snapshot with all data passed in correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should initialize state with empty/falsy values', () => {
     expect(wrapper.state('name')).toEqual('')
     expect(wrapper.state('localFolderID')).toEqual('')
