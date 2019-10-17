@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar should match snapshot 1`] = `
+<aside
+  className="Sidebar"
+>
+  <FolderForm
+    addNewFolder={[MockFunction]}
+    folders={Array []}
+    getAllFolders={[MockFunction]}
+  />
+  <FoldersContainer
+    deleteAFolder={[MockFunction]}
+    folders={Array []}
+    getAFoldersPalettes={[MockFunction]}
+  />
+</aside>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Folder should match snapshot 1`] = `
+<article
+  className="Folder"
+>
+  <button
+    id="folder_name"
+    onClick={[Function]}
+  >
+    Blushing
+  </button>
+  <img
+    alt="delete-img"
+    id="delete-img"
+    onClick={[Function]}
+    src={
+      Object {
+        "ReactComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "__esModule": true,
+        "default": "delete.svg",
+      }
+    }
+  />
+</article>
+`;

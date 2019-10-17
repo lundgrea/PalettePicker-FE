@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header
+  className="Header"
+>
+  <button
+    id="header-text-button"
+    onClick={[Function]}
+  >
+    Happy Little Palette Picker
+  </button>
+</header>
+`;

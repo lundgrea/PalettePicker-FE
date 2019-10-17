@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FolderForm should match the snapshot 1`] = `
+<form
+  className="FolderForm"
+>
+  <label
+    id="addFolder-text"
+  >
+    Create a New Folder
+  </label>
+  <div
+    id="input-button-container"
+  >
+    <input
+      id="addFolder-input"
+      name="folderName"
+      onChange={[Function]}
+      placeholder="Enter New Folder Name"
+      required={true}
+      type="text"
+      value=""
+    />
+    <img
+      alt="addFolder-button"
+      id="addFolder-button"
+      onClick={[Function]}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "add.svg",
+        }
+      }
+    />
+  </div>
+</form>
+`;

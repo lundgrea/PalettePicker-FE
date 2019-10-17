@@ -62,9 +62,6 @@ import {
     });
   });
 
-
-
-
   describe("fetchAPalette", () => {
     let mockResponse;
     beforeEach(() => {
@@ -179,8 +176,6 @@ import {
     });
   });
 
-
-
   describe("fetchAFolder", () => {
     let mockResponse;
     beforeEach(() => {
@@ -224,9 +219,6 @@ import {
     });
   });
 
-
-
-
   describe("fetchAllFolders", () => {
     let mockResponse;
     beforeEach(() => {
@@ -267,8 +259,6 @@ import {
       expect(fetchAllFolders()).rejects.toEqual(Error("Failed to get folders"));
     });
   });
-
-
 
   describe('postNewPalette', () => {
     let mockResponse
@@ -319,8 +309,6 @@ import {
       expect(postNewPalette('Yule Time', '#FFFFF', '#FFFFF', '#FFFFF', '#FFFFF', '#FFFFF', 1)).rejects.toEqual(Error('There was a problem adding your palette'))
       })
   });
-
-
 
   describe('postNewFolder', () => {
     let mockResponse
