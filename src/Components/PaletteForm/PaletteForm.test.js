@@ -47,16 +47,11 @@ describe('PaletteForm', () => {
 
   it('should call handleChange on a keydown event', () => {
 
-    // const mockEvent = { preventDefault: jest.fn() }
+    const mockEvent = { preventDefault: jest.fn() }
 
-    // const mockEvent = { target: { name: 'name', value: 'Tupac Teals' } }
-    // wrapper.instance().toggleViewForms();
-    // wrapper.instance().forceUpdate();
-    // wrapper.find('button').at(1).simulate('click', mockEvent);
+    wrapper.find('#download-img').simulate('click', mockEvent);
 
     const mockEvent2 = () => {}
-
-    // wrapper.instance().state('viewForms').toEqual(true)
 
     wrapper.instance().handleChange = jest.fn();
     wrapper.instance().forceUpdate();
