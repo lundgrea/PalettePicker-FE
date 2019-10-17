@@ -3,7 +3,7 @@ import FolderForm from "../../Components/FolderForm/FolderForm";
 import FoldersContainer from "../../Components/FoldersContainer/FoldersContainer";
 import "./Sidebar.css";
 
-const Sidebar = props => {
+export const Sidebar = props => {
   return (
     <aside className="Sidebar">
       <FolderForm 

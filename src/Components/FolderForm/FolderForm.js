@@ -43,6 +43,7 @@ class FolderForm extends Component {
         onChange={this.handleChange}
         required/>
         <img 
+        alt="addFolder-button"
         id="addFolder-button"
         src={require('../../assets/add.svg')}
         onClick={(e) => this.handleSubmit(e, this.state.folderName)}

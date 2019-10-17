@@ -2,7 +2,7 @@ import React from "react";
 import Folder from "../Folder/Folder";
 import "./FoldersContainer.css";
 
-const FoldersContainer = props => {
+export const FoldersContainer = props => {
   const allFolders = props.folders.folders.map((folder, index) => {
     return (
       <Folder 

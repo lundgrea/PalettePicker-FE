@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FoldersContainer should match snapshot 1`] = `
+<article
+  className="FoldersContainer"
+>
+  <h2
+    id="foldersContainer-header-text"
+  >
+    Saved Folders
+  </h2>
+  <div
+    id="folders-scroll-section"
+  >
+    <Folder
+      deleteAFolder={[MockFunction]}
+      getAFoldersPalettes={[MockFunction]}
+      id={99}
+      key="0"
+      name="Cruising"
+    />
+    <Folder
+      deleteAFolder={[MockFunction]}
+      getAFoldersPalettes={[MockFunction]}
+      id={33}
+      key="1"
+      name="Just Joshin"
+    />
+  </div>
+</article>
+`;
