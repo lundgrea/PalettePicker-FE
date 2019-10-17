@@ -103,6 +103,5 @@ describe('ColorsContainer', () => {
       />);
     const name = wrapper.find('h2')
     expect(name).toHaveLength(1);
-    // expect(mockDeleteAPalette).toHaveBeenCalledWith(mockEvent, 114, 16558);
   });
 })

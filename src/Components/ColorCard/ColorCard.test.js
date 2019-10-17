@@ -1,13 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { configure } from 'enzyme';
 import ColorCard from './ColorCard'
+import unlockedImage from '../../assets/unlocked.svg'
+
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
 describe('ColorCard', () => {
   let wrapper;
+  const lockedImage = '../../assets/locked.svg';
 
   beforeEach(() => {
     wrapper = shallow(<ColorCard
@@ -43,4 +47,21 @@ describe('ColorCard', () => {
 
     expect(mockToggleLock).toHaveBeenCalled();
   });
+
+  it('should display an image if locked', () => {
+    expect(wrapper.find('img')).toHaveLength(1)
+  })
+
+  it('should display an image if unlocked', () => {
+    wrapper = shallow(<ColorCard
+      color={"#586BA4"}
+      delete={jest.fn()}
+      folderID={16558}
+      id={114}
+      isLocked={false}
+      name={""}
+      />);
+    expect(wrapper.find('img')).toHaveLength(1)
+  })
+
 })
