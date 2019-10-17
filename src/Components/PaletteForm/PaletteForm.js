@@ -108,7 +108,6 @@ export default PaletteForm;
 PaletteForm.propTypes = {
   currentPalette: PropTypes.array,
   generateRandomColors: PropTypes.func,
-  folders: PropTypes.object,
   isLoading: PropTypes.bool,
   addNewPalette: PropTypes.func
 } 

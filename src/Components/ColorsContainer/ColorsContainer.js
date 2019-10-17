@@ -24,7 +24,8 @@ const ColorsContainer = (props) => {
       {props.paletteName ? 
       <article id="paletteName-container">
         <h2 id="savedPaletteName">{props.paletteName}</h2>
-        <img id="delete-palette-img" 
+        <img id="delete-palette-img"
+        alt="trashcan icon" 
         src={require('../../assets/delete.svg')} 
         onClick={(e) => props.deleteAPalette(e, props.id, props.folderID)}/>
       </article>
@@ -40,7 +41,7 @@ export default ColorsContainer;
 ColorsContainer.propTypes = {
   currentPalette: PropTypes.array,
   folderID: PropTypes.string,
-  folders: PropTypes.object,
+  folders: PropTypes.array,
   palettes: PropTypes.array,
   toggleLock: PropTypes.func
 } 
