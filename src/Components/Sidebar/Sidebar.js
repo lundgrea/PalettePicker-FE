@@ -1,6 +1,7 @@
 import React from "react";
 import FolderForm from "../../Components/FolderForm/FolderForm";
 import FoldersContainer from "../../Components/FoldersContainer/FoldersContainer";
+import PropTypes from 'prop-types';
 import "./Sidebar.css";
 
 export const Sidebar = props => {
@@ -19,3 +20,12 @@ export const Sidebar = props => {
 };
 
 export default Sidebar;
+
+
+Sidebar.propTypes = {
+  addNewFolder:PropTypes.func,
+  deleteAFolder: PropTypes.func,
+  folder: PropTypes.array,
+  getAFoldersPalette: PropTypes.func,
+  getAllFolders: PropTypes.func
+};
