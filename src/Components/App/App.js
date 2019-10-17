@@ -13,12 +13,12 @@ import {
   postNewFolder, 
   patchAPalette, 
   patchAFolder 
-} from '../../apiCalls/apiCalls'
+} from "../../apiCalls/apiCalls"
 import "./App.css";
 
 
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -28,8 +28,8 @@ class App extends Component {
       paletteID: "",
       currentPalette: [],
       isLoading: true,
-      networkMessage: '',
-      error: ''
+      networkMessage: "",
+      error: ""
     };
   }
 
@@ -46,7 +46,7 @@ class App extends Component {
     })
 
     function hexCodeGen () {
-      return '#' + Math.random().toString(16).substr(-6);
+      return "#" + Math.random().toString(16).substr(-6);
     }
 
     return this.state.currentPalette.length === 5 ? this.setState({currentPalette: unlockedSwatches}) : this.setState({currentPalette})
@@ -74,8 +74,6 @@ class App extends Component {
   componentDidMount = () => {
     this.generateRandomColors();
     this.getAllFolders();
-    // this.updateAPalette(19, 'name', 'Bizarre Violet')
-    // this.updateAFolder(11, 'Doozy Boozy')
   };
 
   getAFolder = folderId => {
@@ -141,7 +139,7 @@ class App extends Component {
     deletePalette(paletteId)
     .then(networkMessage => this.setState({networkMessage}))
     .then(() => this.getAFoldersPalettes(e, folderId))
-    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Palette'}))
+    .catch(error => this.setState({error: "Happy Little Accident Deleting Your Palette"}))
   }
 
   deleteAFolder = (e, folderId) => {
@@ -149,7 +147,7 @@ class App extends Component {
     deleteFolder(folderId)
     .then(networkMessage => this.setState({networkMessage}))
     .then(() => this.getAllFolders())
-    .catch(error => this.setState({error: 'Happy Little Accident Deleting Your Folder'}))
+    .catch(error => this.setState({error: "Happy Little Accident Deleting Your Folder"}))
   }
  
 

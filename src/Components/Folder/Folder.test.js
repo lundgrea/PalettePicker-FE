@@ -24,7 +24,6 @@ describe("Folder", () => {
   it('should call getAFoldersPalettes on button click', () => {
     const getAFoldersPalettesMock = jest.fn()
     wrapper = shallow(<Folder key="1" id="2" name={name} palettes={palettes} getAFoldersPalettes={getAFoldersPalettesMock} deleteAFolder={jest.fn()} onClick={jest.fn()}/>)
-
     const mockEvent = { preventDefault: jest.fn()}
     wrapper.find('button').simulate('click', mockEvent)
     expect(getAFoldersPalettesMock).toHaveBeenCalledWith(mockEvent, "2")
