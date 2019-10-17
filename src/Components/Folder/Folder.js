@@ -1,7 +1,7 @@
 import React from 'react'
 import './Folder.css'
 
-const Folder = (props) => {
+export const Folder = (props) => {
   return (
     <article className="Folder">
       <button 
@@ -9,6 +9,7 @@ const Folder = (props) => {
       id="folder_name">{props.name}
       </button>
       <img 
+      alt="delete-img"
       id="delete-img" 
       src={require('../../assets/delete.svg')}
       onClick={(e) => props.deleteAFolder(e, props.id)}
