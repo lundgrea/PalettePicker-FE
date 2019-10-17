@@ -8,6 +8,10 @@ Happy Little Palette Picker is a color-generator application that implements bot
 
 ## Technologies Used:
 * React
+* PostgresSQL
+* Express.js
+* Node.js
+* Knex
 * Jest 
 * Enzyme
 
@@ -24,7 +28,7 @@ Happy Little Palette Picker is a color-generator application that implements bot
 
 `git clone [remote-address] [what you want to name the repo]`
 
-For full functionality, be sure to additionally download the companion repository, PalettePicker-BE, and review the installation instructions.
+For full functionality, be sure to additionally download the companion repository, [PalettePicker-BE](https://github.com/lundgrea/PalettePicker-BE), and review the installation instructions.
 
 ### Install the library dependencies by running
 
@@ -42,5 +46,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Launches the test runner in the interactive watch mode.
 
 ## Screenshots
+
+Homepage
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittleHomepage.png)
+
+Homepage w/ Locked Colors
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittleLockOptions.png)
+
+Homepage w/ Selected Folder
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittlePalettesPerFolderPage.png)
+
+Save Palette Options
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittleSavePaletteForm.png)
+
+Add Palette Name
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittleAddPaletteDemo.png)
+
+Display Added Palette
+
+![](https://github.com/lundgrea/PalettePicker-FE/blob/master/src/assets/HappyLittleCompleteScreen.png)
 
 
