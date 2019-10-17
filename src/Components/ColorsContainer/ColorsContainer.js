@@ -7,7 +7,7 @@ const ColorsContainer = (props) => {
   const allColors = props.currentPalette.map((swatch, index) => {
     return (
       <ColorCard
-      name={swatch.name ? <h2 id="savedPaletteName">{swatch.name}</h2> : undefined}
+      name={swatch.name || undefined}
       delete={props.deleteAPalette || null}
       folderID={props.folderID || null}
       key={index}
