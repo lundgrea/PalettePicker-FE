@@ -64,4 +64,17 @@ describe('ColorCard', () => {
     expect(wrapper.find('img')).toHaveLength(1)
   })
 
+  it('should match the locked color snapshot', () => {
+    wrapper = shallow(<ColorCard
+      color={"#586BA4"}
+      delete={jest.fn()}
+      folderID={16558}
+      id={114}
+      isLocked={true}
+      name={""}
+      />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
 })

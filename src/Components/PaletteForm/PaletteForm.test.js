@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { configure } from 'enzyme';
 import PaletteForm from './PaletteForm'
 import Adapter from 'enzyme-adapter-react-16';
@@ -52,15 +53,36 @@ describe('PaletteForm', () => {
   it('should call handleChange on a keydown event', () => {
 
     const mockEvent = { preventDefault: jest.fn() }
-
     wrapper.find('#download-img').simulate('click', mockEvent);
 
     const mockEvent2 = () => {}
-
     wrapper.instance().handleChange = jest.fn();
     wrapper.instance().forceUpdate();
     wrapper.find('input').at(0).simulate('change', mockEvent2);
 
   expect(wrapper.instance().handleChange).toHaveBeenCalled();
   });
+
+  it('should call displayFolders if isLoading is false', () => {
+    const mockEvent = { preventDefault: jest.fn() }
+    wrapper.find('#download-img').simulate('click', mockEvent);
+    wrapper.find('#dropdown-container').simulate('hover', mockEvent);
+
+    wrapper.instance().displayFolders = jest.fn()
+    wrapper.instance().forceUpdate();
+  expect(wrapper.instance().displayFolders).toHaveBeenCalled()
+  });
+
+  it('should call getFolderName onClick', () => {
+    const mockEvent = { preventDefault: jest.fn() }
+    wrapper.instance().getFolderName = jest.fn()
+    wrapper.find('#download-img').simulate('click', mockEvent);
+    wrapper.find('#dropdown-container').simulate('hover', mockEvent);
+    wrapper.find('#dropdown-button').simulate('hover', mockEvent);
+    wrapper.find('#dropdown-folders').simulate('hover', mockEvent);
+    wrapper.find('#dropdown-button').simulate('hover', mockEvent);
+    wrapper.find('p').at(1).simulate('click', mockEvent);
+    expect(wrapper.instance().getFolderName).toHaveBeenCalled();
+  });
+
 })
