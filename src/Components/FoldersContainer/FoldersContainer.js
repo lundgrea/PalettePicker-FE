@@ -1,5 +1,6 @@
 import React from "react";
 import Folder from "../Folder/Folder";
+import PropTypes from 'prop-types';
 import "./FoldersContainer.css";
 
 export const FoldersContainer = props => {
@@ -25,3 +26,9 @@ export const FoldersContainer = props => {
 };
 
 export default FoldersContainer;
+
+FoldersContainer.propTypes = {
+  deleteAFolder:PropTypes.func,
+  folders: PropTypes.object,
+  getAFoldersPalettes: PropTypes.func
+};

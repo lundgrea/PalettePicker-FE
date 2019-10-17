@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import './FolderForm.css'
 
 class FolderForm extends Component {
@@ -55,3 +56,9 @@ class FolderForm extends Component {
 }
 
 export default FolderForm;
+
+FolderForm.propTypes = {
+  addNewFolder:PropTypes.func,
+  folder: PropTypes.object,
+  getAllFolders: PropTypes.func
+};

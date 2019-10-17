@@ -1,5 +1,7 @@
 import React from 'react'
 import './Header.css'
+import PropTypes from 'prop-types';
+
 
 export const Header = (props) => {
   return (
@@ -12,3 +14,7 @@ export const Header = (props) => {
 }
 
 export default Header
+
+Header.propTypes = {
+  clearFolderID:PropTypes.func
+};

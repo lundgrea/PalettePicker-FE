@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import './Folder.css'
 
 export const Folder = (props) => {
@@ -19,3 +20,12 @@ export const Folder = (props) => {
 }
 
 export default Folder
+
+
+Folder.propTypes = {
+  deleteAFolder:PropTypes.func,
+  getAFoldersPalettes: PropTypes.func,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  palettes: PropTypes.array
+};
