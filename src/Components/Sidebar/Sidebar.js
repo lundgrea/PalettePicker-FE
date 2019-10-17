@@ -25,7 +25,7 @@ export default Sidebar;
 Sidebar.propTypes = {
   addNewFolder:PropTypes.func,
   deleteAFolder: PropTypes.func,
-  folder: PropTypes.object,
+  folder: PropTypes.array,
   getAFoldersPalette: PropTypes.func,
   getAllFolders: PropTypes.func
 };

@@ -43,12 +43,6 @@ describe("App", () => {
     expect(wrapper.state("folderID")).toEqual("");
   });
 
-
-  it('should call fetchAFolder when getAFolder is called', () => {
-    wrapper.instance().getAFolder(12);
-    expect(wrapper.instance().fetchAFolder).toHaveBeenCalled();
-  });
-
   it('should call generateRandomColors and getAllFolder when componentDidMount is called', () => {
     wrapper.instance().getAllFolders = jest.fn();
     wrapper.instance().generateRandomColors = jest.fn()

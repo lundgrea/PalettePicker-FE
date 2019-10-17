@@ -29,6 +29,5 @@ export default FoldersContainer;
 
 FoldersContainer.propTypes = {
   deleteAFolder:PropTypes.func,
-  folders: PropTypes.object,
   getAFoldersPalettes: PropTypes.func
 };

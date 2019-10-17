@@ -25,7 +25,6 @@ export default Folder
 Folder.propTypes = {
   deleteAFolder:PropTypes.func,
   getAFoldersPalettes: PropTypes.func,
-  id: PropTypes.number,
   name: PropTypes.string,
   palettes: PropTypes.array
 };
