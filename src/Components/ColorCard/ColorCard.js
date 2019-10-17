@@ -1,5 +1,6 @@
 import React from 'react'
 import './ColorCard.css'
+import PropTypes from 'prop-types';
 
 const ColorCard = (props) => {
   return (
@@ -15,3 +16,13 @@ const ColorCard = (props) => {
 }
 
 export default ColorCard;
+
+ColorCard.propTypes = {
+  color: PropTypes.string,
+  delete: PropTypes.func,
+  folderID: PropTypes.string,
+  id: PropTypes.number,
+  isLocked: PropTypes.bool,
+  name: PropTypes.string,
+  toggleLock: PropTypes.func
+} 

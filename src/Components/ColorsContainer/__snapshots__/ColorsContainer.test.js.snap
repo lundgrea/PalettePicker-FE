@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorsContainer should match the snapshot with all data passed in correctly 1`] = `
+<section
+  className="ColorsContainer"
+>
+  <ColorCard
+    color="#2C7559"
+    delete={[MockFunction]}
+    folderID={16558}
+    isLocked={false}
+    key="0"
+  />
+  <ColorCard
+    color="57d576"
+    delete={[MockFunction]}
+    folderID={16558}
+    isLocked={false}
+    key="1"
+  />
+  <ColorCard
+    color="#a35c95"
+    delete={[MockFunction]}
+    folderID={16558}
+    isLocked={false}
+    key="2"
+  />
+  <ColorCard
+    color="#461d33"
+    delete={[MockFunction]}
+    folderID={16558}
+    isLocked={false}
+    key="3"
+  />
+  <ColorCard
+    color="413134"
+    delete={[MockFunction]}
+    folderID={16558}
+    isLocked={false}
+    key="4"
+  />
+</section>
+`;

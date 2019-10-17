@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorCard should match the locked color snapshot 1`] = `
+<section
+  className="ColorCard"
+>
+  <div
+    id="color-circle"
+    style={
+      Object {
+        "backgroundColor": "#586BA4",
+      }
+    }
+  />
+  <p
+    id="hex-code"
+  >
+    #586BA4
+  </p>
+  <img
+    alt=""
+    id="lock-img"
+    onClick={[Function]}
+    src={
+      Object {
+        "ReactComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "__esModule": true,
+        "default": "locked.svg",
+      }
+    }
+  />
+</section>
+`;
+
+exports[`ColorCard should match the snapshot with all data passed in correctly 1`] = `
+<section
+  className="ColorCard"
+>
+  <div
+    id="color-circle"
+    style={
+      Object {
+        "backgroundColor": "#586BA4",
+      }
+    }
+  />
+  <p
+    id="hex-code"
+  >
+    #586BA4
+  </p>
+  <img
+    alt=""
+    id="lock-img"
+    onClick={[Function]}
+    src={
+      Object {
+        "ReactComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "__esModule": true,
+        "default": "locked.svg",
+      }
+    }
+  />
+</section>
+`;
